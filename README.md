@@ -3,7 +3,7 @@ JTL-Connector
 
 JTl-Connector a modern interface between a platform and our JTL-Wawi.
 
-**This is official documentation repository**, available on [**docs.jtl-software.de**](http://docs.jtl-software.de).
+**This is official documentation repository**, available on [**docs.jtl-connector.de**](http://docs.jtl-connector.de).
 
 JTL-Software on Twitter
 -----------------------
