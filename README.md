@@ -30,4 +30,4 @@ Documentation index is `build/index.html`.
 Authors
 -------
 
-JTL-Software GmbH (Daniel Böhmer, Christian Spoo)
+JTL-Software GmbH (Daniel Böhmer, Christian Spoo, Daniel Hoffmann, Sven Mäuser)

@@ -1,0 +1,5 @@
+.. index::
+   single: Controller
+
+Controller
+==========

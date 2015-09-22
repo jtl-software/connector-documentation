@@ -1,1 +1,2 @@
-* :doc:`/connector/structure`
+* :doc:`/connector/connector`
+* :doc:`/connector/controller`

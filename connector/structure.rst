@@ -1,5 +1,0 @@
-.. index::
-   single: Structure
-
-Structure
-=========

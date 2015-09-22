@@ -3,6 +3,16 @@ Example Connector
 
 The fastest way of learning is to do it yourself with an example.
 
+Architecture
+------------
+
+Connector Flow
+<insert image here>
+
+Controller Logic
+<insert image here>
+
+
 index.php
 ---------
 
@@ -48,6 +58,4 @@ The bootstrap.
 .. toctree::
     :hidden:
 
-    structure
-
-.. include:: /connector/map.rst.inc
+    connector
