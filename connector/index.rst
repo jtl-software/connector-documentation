@@ -6,8 +6,7 @@ The fastest way of learning is to do it yourself with an example.
 Architecture
 ------------
 
-Connector Flow
-<insert image here>
+.. image:: /_images/connector_flow.png
 
 Controller Logic
 <insert image here>
