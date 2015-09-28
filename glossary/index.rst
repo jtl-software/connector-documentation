@@ -1,5 +1,5 @@
-Terms
-=====
+Glossary
+========
 
 Frequently used terms in our application environment.
 
@@ -10,7 +10,8 @@ Frequently used terms in our application environment.
     endpoint
     jtl-connector
     jtl-wawi
+    jtlconnector
     phar
     sqlite
 
-.. include:: /terms/map.rst.inc
+.. include:: /glossary/map.rst.inc

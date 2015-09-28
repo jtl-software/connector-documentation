@@ -4,16 +4,16 @@ JTL-Connector Documentation
 .. image:: /_images/logo.png
    :alt:   Connector Welcome Page
 
-:doc:`JTl-Connector </terms/jtl-connector>` is a modern interface between a platform and our :doc:`JTL-Wawi </terms/jtl-wawi>`.
+:doc:`JTl-Connector </glossary/jtl-connector>` is a modern interface between a platform and the :doc:`JTL-Wawi </glossary/jtl-wawi>` ERP software.
 
 .. note::
 
-    This documentation assumes you have a working knowledge of PHP, :doc:`Composer </terms/composer>` and Git.
+    This documentation assumes you have a working knowledge of PHP, :doc:`Composer </glossary/composer>` and Git.
 
 Introduction
 ------------
 
-The Developer's guide to leveraging the flexibility of JTL-Connector.
+The Developer's guide to leverage the flexibility of JTL-Connector.
 
 .. toctree::
    :hidden:
@@ -22,22 +22,22 @@ The Developer's guide to leveraging the flexibility of JTL-Connector.
 
 .. include:: /introduction/map.rst.inc
 
-Terms
------
+Glossary
+--------
 
-Frequently used terms in our application environment.
+Frequently used technical terms in our application environment.
 
 .. toctree::
    :hidden:
 
-   terms/index
+   glossary/index
 
-.. include:: /terms/map.rst.inc
+.. include:: /glossary/map.rst.inc
 
 Example Connector
 -----------------
 
-Getting started with our step by step example Connector documentation.
+Get started by learning step by step how to write a connector implementation from scratch.
 
 .. toctree::
    :hidden:
