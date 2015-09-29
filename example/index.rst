@@ -1,5 +1,5 @@
-Example connector implementation
-================================
+Example connector walkthrough
+=============================
 
 .. toctree::
    :hidden:
