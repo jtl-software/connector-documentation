@@ -9,6 +9,17 @@ While application environments like ASP.NET or Java can be used as well, you wou
 Of course you could mimic the structure of the provided PHP library, but this goes far beyond the scope of this beginner's guide.
 We are going to continue using PHP in the course of this book.
 
+Preliminary note
+----------------
+
+All code specific for this example, i.e. code that is specific for the targeted software system that should be connected to JTL-Wawi, resides in the `jtl\\Connector\\Example` namespace.
+You have to use a different namespace prefix for your implementation.
+A possible approach is to combine your company's name with the system you want JTL-Wawi to connect to.
+So if your company was named "ACME Inc." and you wanted to connect to your own hypothetic eCommerce platform called "ACME Shop" a suitable namespace prefix would be `Acme\\Connector\\AcmeShop`.
+
+.. note::
+    Consider the `PSR-0 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0-autoloader.md>`_ and `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard documents if you have any questions regarding the naming of PHP namespaces.
+
 Architecture
 ------------
 
@@ -84,6 +95,8 @@ The application class manages communication with the client (usually JTL-Wawi), 
 Its function is to handle these requests and returns the results back to the application object that wraps the result in the communication protocol and responds to the client.
 
 The application implementation and thus the protocol layer, too, is shared between all PHP-based endpoints.
-It is strongly recommended to use the official implementation by JTL-Software (i.e. :doc:`jtlconnector </glossary/jtlconnector>`) because it is absolutely necessary for the protocol layer to be compatible with :doc:`JTL-Wawi </glossary/jtl-wawi>`'s expectation.
-Your code only needs to make use of the classes and methods provided by :doc:`jtlconnector </glossary/jtlconnector>`.
-Modifications to this library are never necessary and therefore legally prohibited.
+
+.. note::
+    It is **strongly recommended** to use the official implementation by JTL-Software (i.e. :doc:`jtlconnector </glossary/jtlconnector>`) because it is absolutely necessary for the protocol layer to be compatible with :doc:`JTL-Wawi </glossary/jtl-wawi>`'s expectations.
+    Your code only needs to make use of the classes and methods provided by :doc:`jtlconnector </glossary/jtlconnector>`.
+    Modifications to this library are never necessary and therefore legally prohibited.

@@ -9,6 +9,7 @@ JTL-Connector Documentation
 .. note::
 
     This documentation assumes you have a working knowledge of PHP, :doc:`Composer </glossary/composer>` and Git.
+    You should be familiar with object-oriented PHP code and especially the use of namespaces and basic OOP principles.
 
 Introduction
 ------------
