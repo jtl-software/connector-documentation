@@ -42,6 +42,6 @@ Get started by learning step by step how to write a connector implementation fro
 .. toctree::
    :hidden:
 
-   connector/index
+   example/index
 
-.. include:: /connector/map.rst.inc
+.. include:: /example/map.rst.inc

@@ -1,5 +1,0 @@
-.. index::
-   single: Controller
-
-Controller
-==========

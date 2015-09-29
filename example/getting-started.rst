@@ -1,5 +1,5 @@
-Example connector implementation
-================================
+Getting started
+===============
 
 This example provides the necessary information to get you started quickly.
 In this example we show you how to connect :doc:`JTL-Wawi </glossary/jtl-wawi>` to a PHP-based platform and enable it to synchronize data between the two systems.
@@ -13,9 +13,14 @@ Architecture
 ------------
 
 The interface between :doc:`JTL-Wawi </glossary/jtl-wawi>` and :doc:`JTL-Connector </glossary/jtl-connector>` consists of two layers.
-The first layer, provided by JTL-Software, is called `jtlconnector`.
+The first layer, provided by JTL-Software, is called :doc:`jtlconnector </glossary/jtlconnector>`.
 
 .. image:: /_images/connector_flow.png
+
+`jtlconnector` arbitrates between :doc:`JTL-Wawi </glossary/jtl-wawi>` and your endpoint logic.
+To achieve this, we make use of the widely known MVC pattern.
+:doc:`jtlconnector </glossary/jtlconnector>` provides the models and the view layer.
+Your opportunity is to provide the appropriate controller code to read data from or write data to your target system.
 
 Controller Logic
 <insert image here>
@@ -79,11 +84,6 @@ The application class manages communication with the client (usually JTL-Wawi), 
 Its function is to handle these requests and returns the results back to the application object that wraps the result in the communication protocol and responds to the client.
 
 The application implementation and thus the protocol layer, too, is shared between all PHP-based endpoints.
-It is strongly recommended to use the official implementation by JTL-Software (called :doc:`jtlconnector </glossary/jtlconnector>`) because it is absolutely necessary for the protocol layer to be compatible with :doc:`JTL-Wawi </glossary/jtl-wawi>`'s expectation.
+It is strongly recommended to use the official implementation by JTL-Software (i.e. :doc:`jtlconnector </glossary/jtlconnector>`) because it is absolutely necessary for the protocol layer to be compatible with :doc:`JTL-Wawi </glossary/jtl-wawi>`'s expectation.
 Your code only needs to make use of the classes and methods provided by :doc:`jtlconnector </glossary/jtlconnector>`.
 Modifications to this library are never necessary and therefore legally prohibited.
-
-.. toctree::
-    :hidden:
-
-    connector
