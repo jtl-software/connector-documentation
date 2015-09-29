@@ -1,6 +1,3 @@
-.. index::
-   single: Common
-
 Common
 ======
 

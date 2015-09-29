@@ -1,6 +1,3 @@
-.. index::
-   single: Process
-
 Process
 =======
 
@@ -11,6 +8,7 @@ Process
 **Which data is required to be existent in the endpoint?**
 
 Basically the same data you have in your Wawi.
+
 * At least one customer group
 * The same tax rates in endpoint and Wawi
 * At least one language which exists in the Wawi as well
