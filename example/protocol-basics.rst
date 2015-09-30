@@ -39,16 +39,16 @@ The main objects are:
 - Customer
 - CustomerOrder
 - DeliveryNote
+- GlobalData
 - Image
 - Manufacturer
 - Payment
 - Product
 - Specific
 
-There are the following additional RPC objects that cover special functionality, although they are not considered as *main objects*:
+There are the following additional RPC objects that cover special functionality, although **they are not considered as main objects**:
 
 - Connector
-- GlobalData
 - ProductPrice
 - ProductStockLevel
 - StatusChange
