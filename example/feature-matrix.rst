@@ -94,9 +94,9 @@ An example is the creation of variation combinations, i.e. configurable products
 Some systems need to have all available child products before the parent product may be created, maybe, because the parent product must be equipped with a list of all available child products.
 Other systems might need to create the parent product first, e.g. because all child products keep track of their master by using some kind of database foreign key that has to exist.
 
-Either way, you are able to influence JTL-Wawi's behaviour when preparing its operations by configuring your function flags correctly.
+Nevertheless, you are able to influence JTL-Wawi's behaviour when preparing its operations by configuring your function flags correctly.
 Most of the flag names are pretty self-explanatory.
-Some of these require a deep understanding of the targeted system to decide which value to set for a certain function flag.
+Some of them require a deep understanding of the targeted system to decide which value to set for a certain function flag.
 
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Flag                        | Description                                                                                                                                                              |
