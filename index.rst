@@ -46,3 +46,15 @@ Get started by learning step by step how to write a connector implementation fro
    example/index
 
 .. include:: /example/map.rst.inc
+
+FAQ (Frequently Asked Questions)
+--------------------------------
+
+A list of the frequently asked questions regarding the development of an own connector.
+
+.. toctree::
+   :hidden:
+
+   faq/index
+
+.. include:: /faq/map.rst.inc
