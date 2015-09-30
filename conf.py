@@ -6,7 +6,7 @@ from pygments.lexers.web import PhpLexer
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo', 'sphinx.ext.coverage', 'sphinx.ext.pngmath', 'sphinx.ext.mathjax', 'sphinx.ext.ifconfig', 'sensio.sphinx.configurationblock']
 source_suffix = '.rst'
 master_doc = 'index'
-project = 'Connector'
+project = 'JTL-Connector'
 copyright = u'2010-2015, JTL-Software GmbH'
 version = ''
 release = ''
