@@ -13,6 +13,14 @@ release = ''
 exclude_patterns = []
 html_theme = 'connector_rtd_theme'
 html_theme_path = ["_themes"]
+html_static_path = ['_static']
+
+html_context = {
+    'css_files': [
+        '_static/theme_overrides.css',  # overrides for wide tables in RTD theme
+    ],
+}
+
 htmlhelp_basename = 'Connectordoc'
 man_pages = [
     ('index', 'connector', u'JTL-Connector Documentation',
