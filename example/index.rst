@@ -6,6 +6,10 @@ Example connector walkthrough
 
    getting-started
    connector-class
-   controller
+   protocol-basics
+   feature-matrix
+   primary-key-mapper
+   token-loader
+   checksum-loader
 
 .. include:: /example/map.rst.inc
