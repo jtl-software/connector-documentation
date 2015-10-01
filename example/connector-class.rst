@@ -69,12 +69,6 @@ The (abridged) implementation of our example endpoint looks like this:
             $this->controller->setMethod($this->getMethod());
 
             if ($this->action === Method::ACTION_PUSH || $this->action === Method::ACTION_DELETE) {
-                /*
-                if ($this->getMethod()->getController() === 'image') {
-                    return $this->controller->{$this->action}($requestpacket->getParams());
-                }
-                */
-
                 if (!is_array($requestpacket->getParams())) {
                     throw new \Exception("Expecting request array, invalid data given");
                 }
@@ -95,7 +89,7 @@ The (abridged) implementation of our example endpoint looks like this:
 
                 $action->setHandled(true)
                     ->setResult($results)
-                    ->setError($result->getError());    // @todo: refactor to array of errors
+                    ->setError($result->getError());
 
                 return $action;
             }
