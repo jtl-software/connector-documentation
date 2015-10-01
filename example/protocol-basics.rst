@@ -17,7 +17,7 @@ RPC Protocol versioning
 In the future data structure changes inside :doc:`jtlconnector </glossary/jtlconnector>` are likely to happen.
 These modifications become necessary when new functionality is being introduced or existing functionality changes its behaviour in a way that breaks BC (backwards compatibility).
 To detect incompatibilities between the version of JTL-Wawi and the models used by the running endpoint, the :doc:`jtlconnector </glossary/jtlconnector>` keeps track of a so-called **protocol version**.
-JTL-Wawi verifies this protocol version and is thus able to detect, when its own version number and the one communicated by the endpoint do not match.
+JTL-Wawi verifies this protocol version and is thus able to detect when its own version number and the one communicated by the endpoint do not match.
 In this case an error message appears in JTL-Wawi and the synchronization process is aborted.
 
 .. note::
