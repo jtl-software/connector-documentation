@@ -116,7 +116,7 @@ This rather simple, yet flexible approach translates e.g. the RPC method call `p
 
 .. note::
     Your endpoint has to return true for each RPC method call it wants to receive.
-    JTL-Connector additionally has more fine-grained means of informing JTL-Wawi about the target platforms abilities which are discussed later.
+    JTL-Connector additionally has more fine-grained means of informing JTL-Wawi about the target platform's abilities which are discussed later.
 
 The `handle()` method actually performs the RPC call and invokes the appropriate controller method inside your code.
 It basically boils down to taking the method parameters from the `$requestpacket` object and passing them to your controller.
@@ -143,7 +143,7 @@ RPC method parameters
 Most RPC methods receive parameters.
 Per convention **push** methods usually receive an array of objects at a time to improve the synchronization performance.
 However, it is usually easier to handle single objects while inserting, as especially products might have large amounts of information that have to be stored at different locations inside the target software system.
-The example `Connector` class above therefore uses a simple `foreach` loop to call the respective controller method several times, each time passing one of the objects received from the client.
+The example `Connector` class above uses therefore a simple `foreach` loop to call the respective controller method several times, each time passing one of the objects received from the client.
 
 You can see that there already is one exception of this rule of thumb:
 The method `product_price.push` that provides a fast way of updating product prices (an operating that is executed quite often) only receives one object at a time.
