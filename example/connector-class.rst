@@ -99,27 +99,27 @@ The (abridged) implementation of our example endpoint looks like this:
         }
     }
 
-The `Connector` class extends from an abstract base implementation provided by :doc:`jtlconnector </glossary/jtlconnector>`.
-It ensures that the `initialize` method is called exactly once for each HTTP request being made.
+The :code:`Connector` class extends from an abstract base implementation provided by :doc:`jtlconnector </glossary/jtlconnector>`.
+It ensures that the :code:`initialize` method is called exactly once for each HTTP request being made.
 Inside this method three classes are being registered in the base connector class: the :doc:`PrimaryKeyMapper <primary-key-mapper>`, the :doc:`TokenLoader <token-loader>` and the :doc:`ChecksumLoader <checksum-loader>`.
 We will explain them later.
 
 `canHandle()` and `handle()`
 ----------------------------
 
-For now, have a look at the `canHandle()` and `handle()` methods.
-The `canHandle()` method checks whether a certain RPC method can be handled by this endpoint.
+For now, have a look at the :code:`canHandle()` and :code:`handle()` methods.
+The :code:`canHandle()` method checks whether a certain RPC method can be handled by this endpoint.
 JTL-Connector has to do this check because different software products support different feature sets and JTL-Wawi needs to know whether the platform supports a certain feature or not.
 The implementation above makes use of `Reflection <http://www.php.net/reflection>`_ to check whether the method is supported or not.
 
-This rather simple, yet flexible approach translates e.g. the RPC method call `product.push` into the method `jtl\\Connector\\Example\\Controller\\Product::push()` which is then being called.
+This rather simple, yet flexible approach translates e.g. the RPC method call :code:`product.push` into the method :code:`jtl\Connector\Example\Controller\Product::push()` which is then being called.
 
 .. note::
     Your endpoint has to return true for each RPC method call it wants to receive.
     JTL-Connector additionally has more fine-grained means of informing JTL-Wawi about the target platform's abilities which are discussed later.
 
-The `handle()` method actually performs the RPC call and invokes the appropriate controller method inside your code.
-It basically boils down to taking the method parameters from the `$requestpacket` object and passing them to your controller.
+The :code:`handle()` method actually performs the RPC call and invokes the appropriate controller method inside your code.
+It basically boils down to taking the method parameters from the :code:`$requestpacket` object and passing them to your controller.
 
 Method types
 ------------
@@ -143,10 +143,10 @@ RPC method parameters
 Most RPC methods receive parameters.
 Per convention **push** methods usually receive an array of objects at a time to improve the synchronization performance.
 However, it is usually easier to handle single objects while inserting, as especially products might have large amounts of information that have to be stored at different locations inside the target software system.
-The example `Connector` class above uses therefore a simple `foreach` loop to call the respective controller method several times, each time passing one of the objects received from the client.
+The example :code:`Connector` class above uses therefore a simple :code:`foreach` loop to call the respective controller method several times, each time passing one of the objects received from the client.
 
 You can see that there already is one exception of this rule of thumb:
-The method `product_price.push` that provides a fast way of updating product prices (an operating that is executed quite often) only receives one object at a time.
+The method :code:`product_price.push` that provides a fast way of updating product prices (an operating that is executed quite often) only receives one object at a time.
 This is due to the fact, that price updates happen regularly and should therefore be executed as fast as possible.
 
 .. note::
@@ -154,5 +154,5 @@ This is due to the fact, that price updates happen regularly and should therefor
     You are free to vary your logic, depending on the abilities or requirements of the platform you are addressing.
 
 The controller method results are then collected and returned to :doc:`jtlconnector </glossary/jtlconnector>`.
-A so-called `Action` object is created with the results and possible errors that might have occurred during method execution.
+A so-called :code:`Action` object is created with the results and possible errors that might have occurred during method execution.
 

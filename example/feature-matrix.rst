@@ -98,12 +98,12 @@ Nevertheless, you are able to influence JTL-Wawi's behaviour when preparing its 
 Most of the flag names are pretty self-explanatory.
 Some of them require a deep understanding of the targeted system to decide which value to set for a certain function flag.
 
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Flag                        | Description                                                                                                                                                              |
-+=============================+==========================================================================================================================================================================+
-| var_combination_child_first | Used to determine whether child products or parent products must be inserted first when uploading variation combination from JTL-Wawi.                                   |
-|                             | A `true` value determines that the child product will be inserted first and the parent products will be the last products during the complete synchronization operation. |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| needs_finish_call           | Specifies that this endpoint needs to perform maintenance tasks after the synchronization has completed.                                                                 |
-|                             | This mechanism can be used to recreate frontend indexes that might be needed after product data update.                                                                  |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Flag                        | Description                                                                                                                                                                    |
++=============================+================================================================================================================================================================================+
+| var_combination_child_first | Used to determine whether child products or parent products must be inserted first when uploading variation combination from JTL-Wawi.                                         |
+|                             | A :code:`true` value determines that the child product will be inserted first and the parent products will be the last products during the complete synchronization operation. |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| needs_finish_call           | Specifies that this endpoint needs to perform maintenance tasks after the synchronization has completed.                                                                       |
+|                             | This mechanism can be used to recreate frontend indexes that might be needed after product data update.                                                                        |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

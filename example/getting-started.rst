@@ -93,8 +93,8 @@ As :doc:`Composer </glossary/composer>` is being used to manage library dependen
         }
     }
 
-After the bootstrap code initializes the autoloader, it loads the `Connector` class and the application class.
-The application class manages communication with the client (usually JTL-Wawi), handles the protocol layer and forwards all requests to the `Connector` class.
+After the bootstrap code initializes the autoloader, it loads the :code:`Connector` class and the application class.
+The application class manages communication with the client (usually JTL-Wawi), handles the protocol layer and forwards all requests to the :code:`Connector` class.
 Its function is to handle these requests and returns the results back to the application object that wraps the result in the communication protocol and responds to the client.
 
 The application implementation and thus the protocol layer, too, is shared between all PHP-based endpoints.

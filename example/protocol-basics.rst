@@ -27,7 +27,7 @@ In this case an error message appears in JTL-Wawi and the synchronization proces
 Data models
 -----------
 
-All models used by JTL-Connector live inside the `jtl\\Connector\\Model` namespace.
+All models used by JTL-Connector live inside the :code:`jtl\Connector\Model` namespace.
 Refer to their source code to learn about the data they supply.
 Each RPC call transports a hierarchy of data objects that belong together.
 
