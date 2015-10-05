@@ -11,17 +11,17 @@ JTL-Connector Documentation
     This documentation assumes you have a working knowledge of PHP, :doc:`Composer </glossary/composer>` and Git.
     You should be familiar with object-oriented PHP code and especially the use of namespaces and basic OOP principles.
 
-Introduction
-------------
+The book
+--------
 
-The Developer's guide to leverage the flexibility of JTL-Connector.
+The developer's guide to leverage the flexibility of JTL-Connector.
 
 .. toctree::
    :hidden:
 
-   introduction/index
+   book/index
 
-.. include:: /introduction/map.rst.inc
+.. include:: /book/map.rst.inc
 
 Glossary
 --------
