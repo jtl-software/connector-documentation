@@ -1,6 +1,10 @@
 JTL-Connector Documentation
 ===========================
 
+.. note::
+   This documentation is still *work in progress* and can and will change quite frequently.
+   You are encouraged to visit this page often to keep up with the most recent changes.
+
 .. image:: /_images/logo.png
    :alt:   Connector Welcome Page
 
