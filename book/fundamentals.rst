@@ -12,7 +12,7 @@ Incoming JSON requests are decoded and validated inside the :doc:`jtlconnector <
 :doc:`jtlconnector </glossary/jtlconnector>` decodes the RPC requests and identifies the RPC object and its method to be called.
 
 Each RPC object maps to a controller object inside the endpoint whose respective method will then be invoked.
-The RPC method `product.push` thus maps to an invocation of the controller method Product::push().
+The RPC method :code:`product.push` thus maps to an invocation of the controller method :code:`Product::push()`.
 It is the endpoint's responsibility to perform the actual routing.
 
 Each controller method that is invoked receives the RPC parameters as method arguments.
@@ -38,4 +38,33 @@ First, start by creating a `Product` controller class in your endpoint.
 
 .. code-block:: php
 
-    // src/
+    // src/Controller/Product.php
+    namespace Acme\Connector\AcmeShop\Controller;
+
+    use jtl\Connector\Core\Controller\Controller;
+    use jtl\Connector\Core\Model\DataModel;
+    use jtl\Connector\Core\Model\QueryFilter;
+
+    class Product extends Controller
+    {
+        public function push(DataModel $model)
+        {
+        }
+
+        public function pull(QueryFilter $queryFilter)
+        {
+        }
+
+        public function delete(DataModel $model)
+        {
+        }
+
+        public function statistic(QueryFilter $queryFilter)
+        {
+        }
+    }
+
+All controller objects conform to the :code:`jtl\Connector\Core\Controller\IController` interface.
+A generic base implementation is available in the :code:`jtl\Connector\Core\Controller\Controller` class which has been used here to derive the :code:`Product` class from.
+
+
