@@ -3,7 +3,7 @@ import sys, os
 from sphinx.highlighting import lexers
 from pygments.lexers.web import PhpLexer
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo', 'sphinx.ext.coverage', 'sphinx.ext.pngmath', 'sphinx.ext.mathjax', 'sphinx.ext.ifconfig', 'sensio.sphinx.configurationblock']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo', 'sphinx.ext.coverage', 'sphinx.ext.pngmath', 'sphinx.ext.mathjax', 'sphinx.ext.ifconfig', 'sphinxcontrib.phpdomain', 'sensio.sphinx.configurationblock']
 source_suffix = '.rst'
 master_doc = 'index'
 project = 'JTL-Connector'
@@ -13,6 +13,7 @@ release = ''
 exclude_patterns = []
 html_theme = 'connector_rtd_theme'
 html_theme_path = ["_themes"]
+html_show_sourcelink = False
 
 htmlhelp_basename = 'Connectordoc'
 man_pages = [
