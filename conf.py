@@ -13,6 +13,7 @@ release = ''
 exclude_patterns = []
 html_theme = 'connector_rtd_theme'
 html_theme_path = ["_themes"]
+html_show_sourcelink = False
 
 htmlhelp_basename = 'Connectordoc'
 man_pages = [
