@@ -8,7 +8,7 @@ JTL-Connector Documentation
 .. image:: /_images/logo.png
    :alt:   Connector Welcome Page
 
-:doc:`JTl-Connector </glossary/jtl-connector>` is a modern interface between a platform and the :doc:`JTL-Wawi </glossary/jtl-wawi>` ERP software.
+:doc:`JTL-Connector </glossary/jtl-connector>` is a modern interface between a platform and the :doc:`JTL-Wawi </glossary/jtl-wawi>` ERP software.
 
 .. note::
 
