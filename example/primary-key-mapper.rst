@@ -1,3 +1,5 @@
+.. _primary-key-mapper:
+
 Primary key mapper
 ==================
 
