@@ -17,6 +17,7 @@ If you contribute to documentation you will want to check how it looks after you
 
 ```
 $ sudo easy_install -U Sphinx
+$ sudo easy_install -U sphinxcontrib-phpdomain
 ```
 
 Then run the following command.
