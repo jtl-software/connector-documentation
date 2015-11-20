@@ -26,6 +26,8 @@ Keep in mind that on a production setting messages with DEBUG as level (checksum
 
 Other channels can be added as well es the log level can be defined.
 
+.. image:: /_images/debugging_server.png
+
 Client side
 -----------
 
