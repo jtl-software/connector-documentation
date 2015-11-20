@@ -1,7 +1,7 @@
 Plugins
 =======
 
-Plugins offer developers an easy way of adapting and extending an endpoint.
+Plugins offer developers an easy way of adapting and extending an :doc:`Endpoint </glossary/endpoint>`.
 In this chapter the plugin system is introduced as well as the event system it based on.
 After an overview of the architecture an example plugin is discussed.
 

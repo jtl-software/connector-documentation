@@ -3,7 +3,7 @@ Common
 
 **Why can I not browse the connector?**
 
-The connector *only* works together with JTL-Wawi. Browsing the URL itself is not indented.
+The connector *only* works together with :doc:`JTL-Wawi </glossary/jtl-wawi>`. Browsing the URL itself is not indented.
 
 **For which systems can I develop a connector?**
 

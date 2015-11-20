@@ -1,7 +1,7 @@
 Process
 =======
 
-**The Wawi expects an id that my models do not have. What should I do?**
+**The :doc:`JTL-Wawi </glossary/jtl-wawi>` expects an id that my models do not have. What should I do?**
 
 Let us take the ``CustomerOrder`` model as an example. It has the relations ``BillingAddress`` and ``PaymentAddress``.
 If one or both addresses would be stored in the same table they don't have an id.
@@ -14,18 +14,18 @@ If you are adding a new model the endpoint id cannot be mapped to the host id.
 After adding a mapping is saved and the host id and endpoint id can be mapped.
 This points out that an edit action should take place.
 
-**Which data is required to be existent in the endpoint?**
+**Which data is required to be existent in the :doc:`Endpoint </glossary/endpoint>`?**
 
-Basically the same data you have in your JTL-Wawi.
+Basically the same data you have in your :doc:`JTL-Wawi </glossary/jtl-wawi>`.
 
 * At least one customer group
-* The same tax rates in endpoint and JTL-Wawi
-* At least one language which exists in JTL-Wawi as well
-* At least one currency which exists in JTL-Wawi as well
+* The same tax rates in :doc:`Endpoint </glossary/endpoint>` and :doc:`JTL-Wawi </glossary/jtl-wawi>`
+* At least one language which exists in :doc:`JTL-Wawi </glossary/jtl-wawi>` as well
+* At least one currency which exists in :doc:`JTL-Wawi </glossary/jtl-wawi>` as well
 
 **How is it ensured that the Id of a newly created entity can be used in the same process?**
 
-The data is pushed by JTL-Wawi in a way that the id of newly created models in the endpoint can be used by
+The data is pushed by :doc:`JTL-Wawi </glossary/jtl-wawi>` in a way that the id of newly created models in the :doc:`Endpoint </glossary/endpoint>` can be used by
 other models referring to it. This means e.g. that categories are pushed before products, before images.
 
 Identity Linking

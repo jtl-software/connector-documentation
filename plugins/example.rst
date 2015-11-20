@@ -95,7 +95,7 @@ In this case :code:`$event->getProduct()` returns the object. It can be modified
     }
 
 The goal of the Plugin is to support a maximum order quantity.
-It is supported in Shopware by default but not in the JTL-Wawi.
+It is supported in Shopware by default but not in :doc:`JTL-Wawi </glossary/jtl-wawi>`.
 An attribute with the name 'maximumOrderQuantity' is taken to set the value of the article details.
 
-That is basically all you need to know if you want to extend the endpoint with a plugin.
+That is basically all you need to know if you want to extend the :doc:`Endpoint </glossary/endpoint>` with a plugin.

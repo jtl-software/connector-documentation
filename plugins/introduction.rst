@@ -8,5 +8,5 @@ More detailed information about the event system can be found in chapter :ref:`p
 Another programming paradigm which is used is Dependency Injection.
 It allows the automatically loading of all plugins by the Connector-Core.
 
-By using the above mentioned principles the plugin ist decoupled from the actual endpoint implementation.
+By using the above mentioned principles the plugin ist decoupled from the actual :doc:`Endpoint </glossary/endpoint>` implementation.
 Nevertheless you have access to all by the :doc:`JTL-Wawi </glossary/jtl-wawi>` transferred information.
