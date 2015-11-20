@@ -6,5 +6,6 @@ The book
 
     preface
     fundamentals
+    debugging
 
 .. include:: /book/map.rst.inc

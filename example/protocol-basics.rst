@@ -24,6 +24,8 @@ In this case an error message appears in JTL-Wawi and the synchronization proces
     :doc:`jtlconnector </glossary/jtlconnector>` is updated regularly.
     You can (and should) follow its development to be informed about updates that break BC.
 
+.. _data-models:
+
 Data models
 -----------
 

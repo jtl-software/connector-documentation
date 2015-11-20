@@ -51,6 +51,18 @@ Get started by learning step by step how to write a connector implementation fro
 
 .. include:: /example/map.rst.inc
 
+Plugins
+-------
+
+Plugins offer developers an easy way of adapting and extending an endpoint.
+
+.. toctree::
+   :hidden:
+
+   plugins/index
+
+.. include:: /plugins/map.rst.inc
+
 FAQ (Frequently Asked Questions)
 --------------------------------
 

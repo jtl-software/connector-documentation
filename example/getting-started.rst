@@ -20,6 +20,9 @@ So if your company was named "ACME Inc." and you wanted to connect to your own h
 .. note::
     Consider the `PSR-0 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0-autoloader.md>`_ and `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard documents if you have any questions regarding the naming of PHP namespaces.
 
+
+.. _connector-architecture:
+
 Architecture
 ------------
 

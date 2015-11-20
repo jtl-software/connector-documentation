@@ -1,3 +1,5 @@
+.. _token-loader:
+
 Token loader
 ============
 

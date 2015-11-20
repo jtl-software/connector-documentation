@@ -1,0 +1,12 @@
+Introduction
+============
+
+Plugins get invoked by an event driven system.
+These events are fired by the Connector-Core.
+More detailed information about the event system can be found in chapter :ref:`plugin-events`.
+
+Another programming paradigm which is used is Dependency Injection.
+It allows the automatically loading of all plugins by the Connector-Core.
+
+By using the above mentioned principles the plugin ist decoupled from the actual endpoint implementation.
+Nevertheless you have access to all by the :doc:`JTL-Wawi </glossary/jtl-wawi>` transferred information.
