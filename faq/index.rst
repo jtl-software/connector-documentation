@@ -1,7 +1,7 @@
 FAQ (Frequently Asked Questions)
 ================================
 
-Frequently used terms in our application environment.
+Frequently asked questions to the development of an :doc:`Endpoint </glossary/endpoint>`.
 
 .. toctree::
     :hidden:

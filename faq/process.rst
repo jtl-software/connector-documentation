@@ -1,7 +1,7 @@
 Process
 =======
 
-**The :doc:`JTL-Wawi </glossary/jtl-wawi>` expects an id that my models do not have. What should I do?**
+**The JTL-Wawi expects an id that my models do not have. What should I do?**
 
 Let us take the ``CustomerOrder`` model as an example. It has the relations ``BillingAddress`` and ``PaymentAddress``.
 If one or both addresses would be stored in the same table they don't have an id.
@@ -14,7 +14,7 @@ If you are adding a new model the endpoint id cannot be mapped to the host id.
 After adding a mapping is saved and the host id and endpoint id can be mapped.
 This points out that an edit action should take place.
 
-**Which data is required to be existent in the :doc:`Endpoint </glossary/endpoint>`?**
+**Which data is required to be existent in the Endpoint?**
 
 Basically the same data you have in your :doc:`JTL-Wawi </glossary/jtl-wawi>`.
 
