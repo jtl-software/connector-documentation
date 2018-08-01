@@ -11,7 +11,7 @@ This file can be used to define configurations you want to access during the syn
 They can be access by ``Application()->getConfig()``.
 A predefined key is ``developer_logging`` which has the effect, if it is set to true, that also messages with a DEBUG level are logged.
 
-**How can write an abstract mapper?**
+**How can i write an abstract mapper?**
 
 By using the ``jtl\Connector\Type\DataType`` and ``jtl\Connector\Model\DataModel`` class an abstract mapper can be implemented.
 An example on how you get the type of the called mapper can be found in the example connector's ``jtl\Connector\Example\Mapper\DataMapper`` class.
