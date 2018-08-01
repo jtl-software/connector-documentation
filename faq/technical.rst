@@ -19,7 +19,7 @@ An example on how you get the type of the called mapper can be found in the exam
 **Why are my mappers and controllers not found?**
 
 * It is not intended to add sub namespaces for classes in the controller and mapper folder. If you do so you have to make sure that the namespaces are taken into account while loading the classes.
-* You do not stick to the PSR-0 or PSR-4 autoloading standard specified in the composer.json. Checkout `this site <http://www.php-fig.org/psr/>`_ for more information.
+* You do not stick to the PSR-0 or PSR-4 autoloading standard specified in the composer.json. Check out `this site <http://www.php-fig.org/psr/>`_ for more information.
 
 **What should be done if an error occurs?**
 
