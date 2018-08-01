@@ -48,7 +48,7 @@ Besides the coding style it will get very important if you don't have just one e
 In our example the :code:`ProductListener` class is located in a separated folder for listeners.
 As defined in our :code:`bootstrap.php` the :code:`onProductAfterPushAction` method will be called by the dispatcher after the product push.
 
-The passed parameter contains an event. via a getter method you have access to the main entity of the event.
+The passed parameter contains an event. Via a getter method you have access to the main entity of the event.
 In this case :code:`$event->getProduct()` returns the object. It can be modified in a before event or used like in this example in an after event.
 
 .. code-block:: php
