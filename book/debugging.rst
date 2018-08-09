@@ -24,7 +24,7 @@ Keep in mind that on a production setting messages with DEBUG as level (checksum
 * rpc: All requests and responses between JTL-Wawi and endpoint are written into this file.
 * session: All actions of the session handler are written into this file.
 
-Other channels can be added as well es the log level can be defined.
+Other channels can be added as well as the log level can be defined.
 
 .. image:: /_images/debugging_server.png
 

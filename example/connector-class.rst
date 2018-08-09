@@ -146,7 +146,7 @@ However, it is usually easier to handle single objects while inserting, as espec
 The example :code:`Connector` class above uses therefore a simple :code:`foreach` loop to call the respective controller method several times, each time passing one of the objects received from the client.
 
 You can see that there already is one exception of this rule of thumb:
-The method :code:`product_price.push` that provides a fast way of updating product prices (an operating that is executed quite often) only receives one object at a time.
+The method :code:`product_price.push` that provides a fast way of updating product prices (an operation that is executed quite often) only receives one object at a time.
 This is due to the fact that price updates happen regularly and should therefore be executed as fast as possible.
 
 .. note::
