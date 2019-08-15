@@ -3,11 +3,11 @@ import sys, os
 from sphinx.highlighting import lexers
 from pygments.lexers.web import PhpLexer
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo', 'sphinx.ext.coverage', 'sphinx.ext.mathjax', 'sphinx.ext.ifconfig', 'sensio.sphinx.configurationblock']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo', 'sphinx.ext.coverage', 'sphinx.ext.mathjax', 'sphinx.ext.ifconfig', 'sphinxcontrib.phpdomain', 'sensio.sphinx.configurationblock']
 source_suffix = '.rst'
 master_doc = 'index'
 project = 'JTL-Connector'
-copyright = u'2010-2019, JTL-Software GmbH'
+copyright = u'2010-2015, JTL-Software GmbH'
 version = ''
 release = ''
 exclude_patterns = []
