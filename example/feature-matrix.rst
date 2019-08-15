@@ -7,7 +7,7 @@ To tell JTL-Wawi which features of JTL-Connectors are supported by your endpoint
 
 Basically, this is a simple JSON file containing information about which features are supported or not.
 An excerpt of the example connector's feature matrix is shown below to give you an idea of the basic concept behind this file.
-The complete file is available on `GitLab <https://gitlab.jtl-software.de/jtlconnector/example-connector/blob/master/config/features.json>`_.
+The complete file is available on `GitHub <https://github.com/jtl-software/connector-example/blob/master/config/config.json>`_.
 
 .. code-block:: json
 

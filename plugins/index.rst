@@ -16,4 +16,4 @@ After an overview of the architecture an example plugin is discussed.
 .. include:: /plugins/map.rst.inc
 
 
-The source code of the example plugin can be found in `this git repository <https://gitlab.jtl-software.de/jtlconnector/demo-plugin>`_.
+The source code of example plugins can be found in `this git repository <https://github.com/jtl-software/connector-plugin-examples>`_. Feel free to contribute.
