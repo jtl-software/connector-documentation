@@ -6,7 +6,7 @@ Token loader
 JTL-Connector uses an **authorization token** to authenticate clients and authorize access to the endpoint.
 This token is entered as synchronization password inside JTL-Wawi.
 As JTL-Connector strives to be as flexible as possible it does not enforce a certain procedure on how to store this password.
-It thus delegates this task to the endpoint, communicating via an object of interface `jtl\\Connector\\Authentication\\ITokenLoader <https://github.com/jtl-software/connector/blob/2.6/src/Authentication/ITokenLoader.php>`_.
+It thus delegates this task to the endpoint, communicating via an object of interface `jtl\\Connector\\Authentication\\ITokenLoader <https://github.com/jtl-software/connector-core/blob/2.6/src/Authentication/ITokenLoader.php>`_.
 
 This interface has only one method :code:`load()` that returns the correct auth token for the endpoint.
 

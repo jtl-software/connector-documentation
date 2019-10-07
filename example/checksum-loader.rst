@@ -3,7 +3,7 @@ Checksum loader
 
 Many shop systems (endpoints) have the ability to work with product variation combinations.
 Usually, due to its complex data structure, this is one of the most heavyweight and resource intensive tasks.
-To avoid unnecessary database queries and/or file operations, and to guarantee optimal performance the JTL-Connector uses an object of the interface `jtl\\Connector\\Checksum\\IChecksumLoader <https://github.com/jtl-software/connector/blob/2.6/src/Checksum/IChecksumLoader.php>`_.
+To avoid unnecessary database queries and/or file operations, and to guarantee optimal performance the JTL-Connector uses an object of the interface `jtl\\Connector\\Checksum\\IChecksumLoader <https://github.com/jtl-software/connector-core/blob/2.6/src/Checksum/IChecksumLoader.php>`_.
 
 It provides methods to write, read and delete checksums based on an endpoint id and its corresponding data type (for now we only use it for products).
 
