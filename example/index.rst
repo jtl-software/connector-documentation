@@ -9,7 +9,6 @@ Example connector walkthrough
    protocol-basics
    feature-matrix
    primary-key-mapper
-   token-loader
-   checksum-loader
+   token-validator
 
 .. include:: /example/map.rst.inc

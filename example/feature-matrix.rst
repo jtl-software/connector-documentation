@@ -16,27 +16,67 @@ The complete file is available on `GitHub <https://github.com/jtl-software/conne
             "Category": {
                 "pull": true,
                 "push": true,
-                "delete": true
+                "delete": false
             },
             "CategoryAttr": {
-                "pull": true,
-                "push": true,
-                "delete": true
+                "pull": false,
+                "push": false,
+                "delete": false
             },
             "CategoryAttrI18n": {
-                "pull": true,
-                "push": true,
-                "delete": true
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "CategoryCustomerGroup": {
+                "pull": false,
+                "push": false,
+                "delete": false
             },
             "CategoryI18n": {
-                "pull": true,
-                "push": true,
-                "delete": true
+                "pull": false,
+                "push": false,
+                "delete": false
             },
             "CategoryInvisibility": {
-                "pull": true,
-                "push": true,
-                "delete": true
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "Checksum": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ConfigGroup": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ConfigGroupI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ConfigItem": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ConfigItemI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ConfigItemPrice": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "CrossSelling": {
+                "pull": false,
+                "push": false,
+                "delete": false
             },
             "CrossSellingGroup": {
                 "pull": false,
@@ -48,17 +88,377 @@ The complete file is available on `GitHub <https://github.com/jtl-software/conne
                 "push": false,
                 "delete": false
             },
+            "CrossSellingItem": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
             "Currency": {
-                "pull": true,
+                "pull": false,
                 "push": false,
                 "delete": false
             },
             "Customer": {
-                "pull": true,
-                "push": true,
-                "delete": true
+                "pull": false,
+                "push": false,
+                "delete": false
             },
             "CustomerAttr": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "CustomerGroup": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "CustomerGroupAttr": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "CustomerGroupI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "CustomerGroupPackagingQuantity": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "CustomerOrder": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "CustomerOrderAttr": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "CustomerOrderBillingAddress": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "CustomerOrderItem": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "CustomerOrderItemVariation": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "CustomerOrderPaymentInfo": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "CustomerOrderShippingAddress": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "DeliveryNote": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "DeliveryNoteItem": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "DeliveryNoteItemInfo": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "FileDownload": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "FileDownloadI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "FileUpload": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "FileUploadI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "Image": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "Language": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "Manufacturer": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ManufacturerI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "MeasurementUnit": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "MeasurementUnitI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "MediaFile": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "MediaFileAttr": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "MediaFileAttrI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "MediaFileI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "PartsList": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "Payment": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "Product": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "Product2Category": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductAttr": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductAttrI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductConfigGroup": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductFileDownload": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductInvisibility": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductPartsList": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductPrice": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductPriceItem": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductSpecialPrice": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductSpecialPriceItem": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductSpecific": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductStockLevel": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductType": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductVarCombination": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductVariation": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductVariationI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductVariationInvisibility": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductVariationValue": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductVariationValueDependency": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductVariationValueExtraCharge": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductVariationValueI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductVariationValueInvisibility": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ProductWarehouseInfo": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "Shipment": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "ShippingClass": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "Specific": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "SpecificI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "SpecificValue": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "SpecificValueI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "Statistic": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "StatusChange": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "TaxClass": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "TaxRate": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "TaxZone": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "TaxZoneCountry": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "Unit": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "UnitI18n": {
+                "pull": false,
+                "push": false,
+                "delete": false
+            },
+            "Warehouse": {
                 "pull": false,
                 "push": false,
                 "delete": false
@@ -76,8 +476,11 @@ The complete file is available on `GitHub <https://github.com/jtl-software/conne
             "variation_products_supported": false,
             "variation_combinations_supported": true,
             "set_articles_supported": false,
-            "needs_finish_call": false,
-            "free_field_supported": false
+            "free_field_supported": false,
+            "needs_category_root": false,
+            "translated_attributes_supported": false,
+            "send_all_acks": false,
+            "disable_statistics": false
         }
     }
 
@@ -103,7 +506,4 @@ Some of them require a deep understanding of the targeted system to decide which
 +=============================+================================================================================================================================================================================+
 | var_combination_child_first | Used to determine whether child products or parent products must be inserted first when uploading variation combination from JTL-Wawi.                                         |
 |                             | A :code:`true` value determines that the child product will be inserted first and the parent products will be the last products during the complete synchronization operation. |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| needs_finish_call           | Specifies that this endpoint needs to perform maintenance tasks after the synchronization has completed.                                                                       |
-|                             | This mechanism can be used to recreate frontend indexes that might be needed after product data update.                                                                        |
 +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

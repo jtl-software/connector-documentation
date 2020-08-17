@@ -3,5 +3,4 @@
 * :doc:`/example/protocol-basics`
 * :doc:`/example/feature-matrix`
 * :doc:`/example/primary-key-mapper`
-* :doc:`/example/token-loader`
-* :doc:`/example/checksum-loader`
+* :doc:`/example/token-validator`
