@@ -7,7 +7,7 @@ At the moment it is enough to say that this protocol provides method call semant
 Those methods, of course, can have parameters.
 
 All details of the communication, protocol decoding and verifications are abstracted away by :doc:`jtlconnector </glossary/jtlconnector>`.
-The main hub for all valid requests is the **Connector** class whose job is to pass RPC calls to the respective controllers as well as to provide the application with certain definitions.
+The main hub for all valid requests is the **Application** class whose job is to pass RPC calls to the respective controllers It also uses the **Connector** class to initialize the endpoint environment.
 
 The (abridged) implementation of our example endpoint looks like this:
 
@@ -19,6 +19,7 @@ The (abridged) implementation of our example endpoint looks like this:
 
     use DI\Container;
     use Jtl\Connector\Core\Authentication\TokenValidatorInterface;
+    use Jtl\Connector\Core\Config\ConfigSchema;
     use Jtl\Connector\Core\Connector\ConnectorInterface;
     use Jtl\Connector\Core\Mapper\PrimaryKeyMapperInterface;
     use Jtl\Connector\Example\Authentication\TokenValidator;
@@ -44,8 +45,8 @@ The (abridged) implementation of our example endpoint looks like this:
 
             //Checks if the connector-token is set to control if the installing routine should be executed
             if (!$this->config->has("token")) {
-                $installer = new Installer($this->db);
-                $installer->run();
+                $installer = new Installer($this->db, ConfigSchema::CONNECTOR_DIR);
+                $installer->run($config->get());
 
                 $this->config->set("token", "123456789");
                 $this->config->write();
@@ -109,6 +110,6 @@ The (abridged) implementation of our example endpoint looks like this:
 
 The :code:`Connector` class implements an interface base provided by :doc:`jtlconnector </glossary/jtlconnector>` to ensure that all mandatory methods are defined.
 One of those methods is the :code:`initialize` method which is executed each time the connector is used. We use this method to instantiate or save any object that will be needed in following classes. The intended way to open access to those objects is by registering them in the DI container.
-In this example we also the this method to call an installer class which then sets up any needed tables and writes the connector token the the config file.
+In this example we also use the this method to call an installer class which then sets up any needed tables and writes the connector token the the config file.
 The connector class is also used to define specific classes like the PrimaryKeyMapper and the TokenValidator.
 The use of those classes will be explained later on.

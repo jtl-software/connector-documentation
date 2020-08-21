@@ -53,7 +53,7 @@ Consult the developer documentation of the target platform if you are unsure.
 During this book we assume that we can place a file called index.php inside a `jtlconnector/` directory so that it can be called from `http://www.shopdomain.tld/jtlconnector/`.
 It is up to you to make sure that this call succeeds in your environment before you may continue.
 
-Place the following code inside `index.php`:
+Place the following code inside `bootstrap.php`:
 
 .. code-block:: php
 
@@ -62,7 +62,7 @@ Place the following code inside `index.php`:
 
     include (__DIR__ . "/src/bootstrap.php");
 
-bootstrap.php
+index.php
 -------------
 
 We follow the widely adopted `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard in this book.
@@ -101,7 +101,7 @@ As :doc:`Composer </glossary/composer>` is being used to manage library dependen
     $application = new Application($connector, CONNECTOR_DIR, $config, $configSchema);
     $application->run();
 
-After the bootstrap code initializes the autoloader, you may want to instantiate a custom Config or ConfigSchema object.
+After the index code initializes the autoloader, you may want to instantiate a custom Config or ConfigSchema object.
 At the end of the index.php we then create a Connector object and use it to instantiate the application which then gets started.
 If a custom Config or ConfigSchema was created, they should be passed to the application as well. Otherwise the application will create those objects itself.
 
