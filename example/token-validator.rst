@@ -1,7 +1,7 @@
 .. _token-validator:
 
 Token validator
-============
+===============
 
 JTL-Connector uses an **authorization token** to authenticate clients and authorize access to the endpoint.
 This token is entered as synchronization password inside JTL-Wawi.
