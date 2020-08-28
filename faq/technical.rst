@@ -8,8 +8,8 @@ Read :ref:`Server site debugging <debugging-server>` for detailed information.
 **What is the config.json file located in the config folder?**
 
 This file can be used to define configurations you want to access during the sync progress.
-They can be access by ``Application()->getConfig()``.
-A predefined key is ``developer_logging`` which has the effect, if it is set to true, that also messages with a DEBUG level are logged.
+The config is passed to the connector.php via the initialize method wich can then be passed further down using the DI container.
+A predefined key is ``log`` which cam be used to define a logging level and directory.
 
 **How can i write an abstract mapper?**
 
@@ -23,5 +23,4 @@ An example on how you get the type of the called mapper can be found in the exam
 
 **What should be done if an error occurs?**
 
-Exceptions has to be caught from within the :doc:`Endpoint </glossary/endpoint>`.
-To make that error public to the :doc:`JTL-Wawi </glossary/jtl-wawi>` you have to set an :code:`jtl\Connector\Core\Rpc\Error` on the :code:`jtl\Connector\Result\Action` object which is returned.
+All Exception that occur within the :doc:`Endpoint </glossary/endpoint>` are being caught by the core and then be passed to the :doc:`JTL-Wawi </glossary/jtl-wawi>`
