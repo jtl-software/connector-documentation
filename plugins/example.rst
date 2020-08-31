@@ -7,6 +7,22 @@ For this example we created a simple plugin that attaches a suffix to every cate
 
 .. _plugin-bootstrap:
 
+Example plugin in connector directory structure
+----------------------------------
+::
+
+    connector-root
+    ├── config
+    ├── plugins
+    │   └── DemoPlugin
+    │       └── Bootstrap.php
+    ├── src
+    ├── some
+    ├── other
+    └── directories
+    └── vendor
+
+
 Bootstrap.php
 -------------
 

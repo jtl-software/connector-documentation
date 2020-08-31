@@ -18,7 +18,7 @@ This points out that an edit action should take place.
 
 Basically the same data you have in your :doc:`JTL-Wawi </glossary/jtl-wawi>`.
 
-* At least one customer group
+* At least one customer group, if you have more customer groups you should mark one as default
 * The same tax rates in :doc:`Endpoint </glossary/endpoint>` and :doc:`JTL-Wawi </glossary/jtl-wawi>`
 * At least one language which exists in :doc:`JTL-Wawi </glossary/jtl-wawi>` as well
 * At least one currency which exists in :doc:`JTL-Wawi </glossary/jtl-wawi>` as well
