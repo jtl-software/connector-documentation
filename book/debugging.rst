@@ -11,22 +11,33 @@ Server side
 -----------
 
 The :doc:`JTL-Connector </glossary/jtl-connector>` writes its own log files.
-All log files are by default located in a logs folder. It can be found in the connector folder.
-By defining the named constant ``LOG_DIR`` the location can also be changed.
+All log files are by default located in a var/log folder. It can be found in the connector folder.
+Log directory can be set in config.json by ``log_dir`` parameter.
 All log files listed below are suffixed by the current date in ISO 8601 format and have the file type log.
 The content of a log entry is a timestamp followed by the level and the log content itself.
-Keep in mind that on a production setting messages with DEBUG as level (checksum, database, rpc and session) are just logged if either the ``developer_logging`` flag in the config.json file is true or your system environment variable ``APPLICATION_ENV`` is set to development.
+Keep in mind that on a production setting messages with DEBUG as level (checksum, database, rpc and session) are just logged if either the ``debug`` flag in the config.json file is true.
 
 * checksum: The linking, reading and writing of the checksums are written into this file.
-* controller: Any exceptions that occur in the controllers' actions.
-* global: Any exceptions are written to this file. They contain the location (class and line) and the message.
-* database: If you use one of the specific database classes of ``jtl\Connector\Core\Database`` all your queries will be logged in this file.
+* global: Any log information from endpoint controller is written into this file
+* error: Exceptions that are thrown are written into this file
+* linker: Identity linker related information
 * rpc: All requests and responses between JTL-Wawi and endpoint are written into this file.
 * session: All actions of the session handler are written into this file.
 
 Other channels can be added as well as the log level can be defined.
 
 .. image:: /_images/debugging_server.png
+
+Using RPC viewer plugin
+-----------------------
+
+Special plugin that is event based and listen for RPC calls before and after action can also be used. Plugin has GUI
+interface that shows in realtime communication between client and :doc:`endpoint </glossary/endpoint>`. In order to use it you need to put it
+inside ``plugins`` folder and open url that points into that directory like http://acme-shop.com/{path_to_connector}/plugins/rpcview/index.html
+
+You can find this plugin in our `github repository <https://github.com/jtl-software/connector-plugin-rpcviewer>`_
+
+.. image:: /_images/rpc_viewer.png
 
 Client side
 -----------
