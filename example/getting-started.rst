@@ -81,4 +81,3 @@ The application implementation and thus the protocol layer, too, is shared betwe
 .. note::
     It is **strongly recommended** to use the official implementation by JTL-Software (i.e. :doc:`jtlconnector </glossary/jtlconnector>`) because it is absolutely necessary for the protocol layer to be compatible with :doc:`JTL-Wawi </glossary/jtl-wawi>`'s expectations.
     Your code only needs to make use of the classes and methods provided by :doc:`jtlconnector </glossary/jtlconnector>`.
-    Modifications to this library are never necessary and therefore legally prohibited.

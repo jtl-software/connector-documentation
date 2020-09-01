@@ -8,8 +8,11 @@ Read :ref:`Server site debugging <debugging-server>` for detailed information.
 **What is the config.json file located in the config folder?**
 
 This file can be used to define configurations you want to access during the sync progress.
-The config is passed to the connector.php via the initialize method wich can then be passed further down using the DI container.
-A predefined key is ``log`` which cam be used to define a logging level and directory.
+The config is passed to the Connector object via the initialize method.
+
+**How can I overwrite model values without changing connector code?**
+
+Please see :ref:`plugins <plugins-introduction>` guide to see how to extend functionality of connector.
 
 **What should be done if an error occurs?**
 
