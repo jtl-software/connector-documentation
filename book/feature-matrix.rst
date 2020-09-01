@@ -1,3 +1,5 @@
+.. _feature-matrix:
+
 The feature matrix
 ==================
 

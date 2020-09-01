@@ -7,7 +7,6 @@ Example connector walkthrough
    getting-started
    connector-class
    protocol-basics
-   feature-matrix
    primary-key-mapper
    token-validator
 

@@ -18,29 +18,7 @@ A possible approach is to combine your company's name with the system you want J
 So if your company was named "ACME Inc." and you wanted to connect to your own hypothetic eCommerce platform called "ACME Shop" a suitable namespace prefix would be `Acme\\Connector\\AcmeShop`.
 
 .. note::
-    Consider the `PSR-0 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0-autoloader.md>`_ and `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard documents if you have any questions regarding the naming of PHP namespaces.
-
-
-.. _connector-architecture:
-
-Architecture
-------------
-
-The interface between :doc:`JTL-Wawi </glossary/jtl-wawi>` and :doc:`JTL-Connector </glossary/jtl-connector>` consists of two layers.
-The first layer, provided by JTL-Software, is called :doc:`jtlconnector </glossary/jtlconnector>`.
-
-.. image:: /_images/connector_flow.png
-
-`jtlconnector` arbitrates between :doc:`JTL-Wawi </glossary/jtl-wawi>` and your so-called **endpoint** logic.
-Your endpoint is the last piece of code and bridges between :doc:`jtlconnector </glossary/jtlconnector>` and your target system.
-
-To achieve this, JTL-Connector makes use of the widely known MVC pattern.
-:doc:`jtlconnector </glossary/jtlconnector>` provides the models and the view layer.
-Your opportunity is to provide the appropriate controller code to read data from or write data to your target system.
-
-
-Controller Logic
-<insert image here>
+    Consider the `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard document if you have any questions regarding the naming of PHP namespaces.
 
 
 index.php
@@ -50,20 +28,8 @@ index.php
 Note that some software products require you to create a real plugin along with additional boilerplate code before you are able to pass execution to JTL-Connector.
 Consult the developer documentation of the target platform if you are unsure.
 
-During this book we assume that we can place a file called index.php inside a `jtlconnector/` directory so that it can be called from `http://www.shopdomain.tld/jtlconnector/`.
+During this book we assume that we place a file called index.php inside the directory `public/` which is the document root directory for `http://www.shopdomain.tld/jtlconnector/`.
 It is up to you to make sure that this call succeeds in your environment before you may continue.
-
-Place the following code inside `bootstrap.php`:
-
-.. code-block:: php
-
-    <?php
-    defined('CONNECTOR_DIR') || define("CONNECTOR_DIR", __DIR__);
-
-    include (__DIR__ . "/src/bootstrap.php");
-
-index.php
--------------
 
 We follow the widely adopted `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard in this book.
 It is therefore recommended to use a "bootstrap file" that prepares the PHP execution environment, sets up autoloading, etc.
@@ -73,7 +39,9 @@ As :doc:`Composer </glossary/composer>` is being used to manage library dependen
 
     <?php
 
-    require_once dirname(__DIR__) . "/bootstrap.php";
+    $connectorDir = dirname(__DIR__);
+
+    require_once $connectorDir . "/vendor/autoload.php";
 
     use Jtl\Connector\Core\Application\Application;
     use Jtl\Connector\Core\Config\ConfigParameter;
@@ -84,7 +52,7 @@ As :doc:`Composer </glossary/composer>` is being used to manage library dependen
     $application = null;
 
     //Setting up a custom FileConfig passing the needed File
-    $config = new FileConfig(sprintf('%s/config/config.json', CONNECTOR_DIR));
+    $config = new FileConfig(sprintf('%s/config/config.json', $connectorDir));
 
     //Setting up a custom config schema that checks the config file for the defined properties
     $configSchema = (new ConfigSchema)
@@ -95,10 +63,10 @@ As :doc:`Composer </glossary/composer>` is being used to manage library dependen
         ->setParameter(new ConfigParameter("db.password", "string", true));
 
     //Instantiating the Connector class which holds information and acts like a Toolbox the the application
-    $connector = new Connector;
+    $connector = new Connector();
 
     //Instantiating and starting the Application as the highest instance of the Connector passing every custom object as well as the connector object
-    $application = new Application($connector, CONNECTOR_DIR, $config, $configSchema);
+    $application = new Application($connector, $connectorDir, $config, $configSchema);
     $application->run();
 
 After the index code initializes the autoloader, you may want to instantiate a custom Config or ConfigSchema object.
