@@ -5,9 +5,12 @@ The book
     :hidden:
 
     preface
-    architecture
     fundamentals
-    feature-matrix
+    architecture
+    protocol-basics
     debugging
+    feature-matrix
+    primary-key-mapper
+    token-validator
 
 .. include:: /book/map.rst.inc

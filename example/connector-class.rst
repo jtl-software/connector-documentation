@@ -35,17 +35,27 @@ The (abridged) implementation of our example endpoint looks like this:
      */
     class Connector implements ConnectorInterface
     {
+        /**
+         * @var ConfigInterface
+         */
         protected $config;
-        protected $db;
 
+        /**
+         * @var PDO
+         */
+        protected $pdo;
+
+        /**
+         * @var PDO
+         */
         public function initialize(ConfigInterface $config, Container $container, EventDispatcher $eventDispatcher) : void
         {
             $this->config = $config;
-            $this->db = $this->getDatabaseInstance();
+            $this->pdo = $this->getDatabaseInstance();
 
             //Checks if the connector-token is set to control if the installing routine should be executed
             if (!$this->config->has("token")) {
-                $installer = new Installer($this->db, ConfigSchema::CONNECTOR_DIR);
+                $installer = new Installer($this->pdo, ConfigSchema::CONNECTOR_DIR);
                 $installer->run($config->get());
 
                 $this->config->set("token", "123456789");
@@ -53,19 +63,19 @@ The (abridged) implementation of our example endpoint looks like this:
             }
 
             //Passing the instantiated database object the the DI container so it can later be accessed by the controllers
-            $container->set(PDO::class, $this->db);
+            $container->set(PDO::class, $this->pdo);
         }
 
         public function getPrimaryKeyMapper() : PrimaryKeyMapperInterface
         {
             //Defining the PrimaryKeyMapper which is used to manage the links between WAWI and shop entities
-            return new PrimaryKeyMapper($this->db);
+            return new PrimaryKeyMapper($this->pdo);
         }
 
         public function getTokenValidator() : TokenValidatorInterface
         {
             //Defining the TokenValidator which is used to check the given token on an Auth call
-            return new TokenValidator($this->config);
+            return new TokenValidator($this->config->get("token"));
         }
 
         public function getControllerNamespace() : string
@@ -82,8 +92,8 @@ The (abridged) implementation of our example endpoint looks like this:
 
         public function getPlatformVersion() : string
         {
-            //Defining the connectors version
-            return "1";
+            //Defining the connectors version. Should be empty for Bulk.
+            return "";
         }
 
         public function getPlatformName() : string
@@ -96,15 +106,16 @@ The (abridged) implementation of our example endpoint looks like this:
         {
             $dbParams = $this->config->get("db");
 
-            $db = new PDO(
+            $pdo = new PDO(
                 sprintf("mysql:host=%s;dbname=%s", $dbParams["host"], "example_connector_db"),
                 $dbParams["username"],
                 $dbParams["password"]/*,
                 [PDO::ERRMODE_EXCEPTION]*/
             );
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            return $db;
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            return $pdo;
         }
     }
 
