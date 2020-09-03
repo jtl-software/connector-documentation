@@ -1,6 +1,9 @@
 Getting started
 ===============
 
+.. note::
+    Full example connector implementation is available in our Github repository `connector-example <https://github.com/jtl-software/connector-example>`_
+
 This tutorial provides the necessary information to get you started quickly.
 We will show you how to connect :doc:`JTL-Wawi </glossary/jtl-wawi>` to a PHP-based platform and enable it to synchronize data between the two systems.
 Although it is not technically required to use PHP for JTL-Connector, this language is the only language we officially support on the server side.

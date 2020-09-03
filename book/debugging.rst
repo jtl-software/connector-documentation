@@ -78,6 +78,8 @@ You can find this plugin in our `github repository <https://github.com/jtl-softw
 
 .. image:: /_images/rpc_viewer.png
 
+.. _debugging-client-side:
+
 Client side
 -----------
 
