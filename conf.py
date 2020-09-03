@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 import sys, os
+
+sys.path.append(os.path.abspath('_exts'))
+
 from sphinx.highlighting import lexers
 from pygments.lexers.web import PhpLexer
 
@@ -20,7 +23,8 @@ man_pages = [
     ('index', 'connector', u'JTL-Connector Documentation',
      [u'JTL-Software GmbH'], 1)
 ]
-sys.path.append(os.path.abspath('_exts'))
+
 lexers['php'] = PhpLexer(startinline=True)
 lexers['php-annotations'] = PhpLexer(startinline=True)
+
 #primary_domain = 'php'

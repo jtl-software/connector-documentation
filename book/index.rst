@@ -9,7 +9,7 @@ The book
     architecture
     protocol-basics
     debugging
-    feature-matrix
+    features-matrix
     primary-key-mapper
     token-validator
     config-schema

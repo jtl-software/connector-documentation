@@ -3,7 +3,7 @@
 * :doc:`/book/architecture`
 * :doc:`/book/protocol-basics`
 * :doc:`/book/debugging`
-* :doc:`/book/feature-matrix`
+* :doc:`/book/features-matrix`
 * :doc:`/book/primary-key-mapper`
 * :doc:`/book/token-validator`
 * :doc:`/book/config-schema`

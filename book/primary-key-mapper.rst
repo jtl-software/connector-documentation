@@ -3,13 +3,14 @@
 Primary key mapper
 ==================
 
-A key component in every endpoint is the :ref:`primary key mapper<primary-key-mapper-class>` class.
-This special class translates between JTL-Wawi's information and the shop's database.
-It identifies each object by its unique properties and stores them. A single set of properties represents the relation of an object between JTL-Wawi (called **host ID**) and the unique properties in the shop (called **endpoint ID**).
+A key component of an endpoint implementation is the :ref:`primary key mapper<primary-key-mapper-class>` class.
+It translates between JTL-Wawi and the shop by storing the unique properties of all objects.
+A single set of properties represents the relation of an object between JTL-Wawi (called **host ID**) and the shop (called **endpoint ID**).
 
 .. note::
     The **host ID** is the primary key of the object in JTL-Wawi.
 
+.. note::
     In most cases the **endpoint ID** is the primary key of the object in the shop.
 
 All primary key mapper classes implement the interface `Jtl\\Connector\\Core\\Mapper\\PrimaryKeyMapperInterface <https://github.com/jtl-software/connector-core/blob/develop/src/Mapper/PrimaryKeyMapperInterface.php>`_.

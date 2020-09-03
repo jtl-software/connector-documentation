@@ -1,15 +1,15 @@
-.. _feature-matrix:
+.. _features-matrix:
 
-The feature matrix
-==================
+The features matrix
+===================
 
 It is very likely that your endpoint implementation does not support the full feature set JTL-Wawi offers.
 This might be due to limitations of the underlying target system or because of functionality that cannot be made compatible with JTL-Wawi because their respective concepts differ too much.
-To tell JTL-Wawi which features of JTL-Connectors are supported by your endpoint implementation, JTL-Connector requires you to build a **feature matrix** and ship it with your endpoint code.
+To tell JTL-Wawi which features of JTL-Connector are supported by your endpoint implementation, you are required to build a **features matrix** and ship it with your endpoint code.
 
 Basically, this is a simple JSON file containing information about which features are supported or not.
-An excerpt of the example connector's feature matrix is shown below to give you an idea of the basic concept behind this file.
-The complete file is available on `GitHub <https://github.com/jtl-software/connector-example/blob/master/config/config.json>`_.
+An example of a connector's features matrix is shown below to give you an idea of the basic concept behind this file.
+The file is also available on `GitHub <https://github.com/jtl-software/connector-example/blob/master/config/features.json>`_.
 
 .. code-block:: json
 

@@ -27,14 +27,15 @@ Log level and log format can be defined in the config.json.
         }
     }
 
-Valid formats are
+Valid log formats are
 
 * json
 * html
 * line (default)
 * mongoDB
 
-See "`Formatters <https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-processors.md#formatters>`_" from the Monolog repository if you want to find out about all possible formats.
+.. note::
+    See "`Formatters <https://github.com/Seldaek/monolog/blob/master/doc/02-handlers-formatters-processors.md#formatters>`_" from the Monolog repository if you want to find out about all possible formats.
 
 Valid log levels are
 
