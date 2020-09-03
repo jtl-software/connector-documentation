@@ -27,18 +27,6 @@ The developer's guide to leverage the flexibility of JTL-Connector.
 
 .. include:: /book/map.rst.inc
 
-Glossary
---------
-
-Frequently used technical terms in our application environment.
-
-.. toctree::
-   :hidden:
-
-   glossary/index
-
-.. include:: /glossary/map.rst.inc
-
 Example Connector
 -----------------
 
@@ -74,3 +62,16 @@ A list of the most frequently asked questions regarding the development with JTL
    faq/index
 
 .. include:: /faq/map.rst.inc
+
+
+Glossary
+--------
+
+Frequently used technical terms in our application environment.
+
+.. toctree::
+   :hidden:
+
+   glossary/index
+
+.. include:: /glossary/map.rst.inc

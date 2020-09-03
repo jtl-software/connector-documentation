@@ -1,5 +1,5 @@
-FAQ (Frequently Asked Questions)
-================================
+FAQ
+===
 
 Frequently asked questions to the development of an :doc:`Endpoint </glossary/endpoint>`.
 
