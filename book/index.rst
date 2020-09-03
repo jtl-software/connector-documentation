@@ -12,5 +12,6 @@ The book
     feature-matrix
     primary-key-mapper
     token-validator
+    config-schema
 
 .. include:: /book/map.rst.inc

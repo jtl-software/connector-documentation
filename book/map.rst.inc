@@ -6,3 +6,4 @@
 * :doc:`/book/feature-matrix`
 * :doc:`/book/primary-key-mapper`
 * :doc:`/book/token-validator`
+* :doc:`/book/config-schema`
