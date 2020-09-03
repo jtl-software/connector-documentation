@@ -1,4 +1,4 @@
-.. _architecture:
+.. _connector-architecture:
 
 Architecture
 ============

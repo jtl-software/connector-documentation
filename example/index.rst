@@ -6,5 +6,7 @@ Example connector walkthrough
 
    getting-started
    connector-class
+   token-validator-class
+   primary-key-mapper-class
 
 .. include:: /example/map.rst.inc

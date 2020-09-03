@@ -1,3 +1,5 @@
+.. _connector-class:
+
 Connector class
 ===============
 
@@ -7,9 +9,15 @@ At the moment it is enough to say that this protocol provides method call semant
 Those methods, of course, can have parameters.
 
 All details of the communication, protocol decoding and verifications are abstracted away by :doc:`jtlconnector </glossary/jtlconnector>`.
-The main hub for all valid requests is the **Application** class whose job is to pass RPC calls to the respective controllers It also uses the **Connector** class to initialize the endpoint environment.
+The main hub for all valid requests is the **Application** class whose job is to pass RPC calls to the respective controllers. It also uses the **Connector** class to initialize the endpoint environment.
 
-The (abridged) implementation of our example endpoint looks like this:
+The :code:`Connector` class implements an interface base provided by :doc:`jtlconnector </glossary/jtlconnector>` to ensure that all mandatory methods are defined.
+One of those methods is the :code:`initialize` method which is executed each time the connector is used. This method can be used to instantiate or save any object that will be needed in following classes. The intended way to open access to those objects is by registering them in the DI container.
+In this example we also use the this method to call an installer class which then sets up any needed tables and writes the connector token the the config file.
+The connector class is also used to define specific classes like the PrimaryKeyMapper and the TokenValidator.
+The use of those classes will be explained later on.
+
+The implementation of the connector class from our example connector looks like the following:
 
 .. code-block:: php
 
@@ -150,9 +158,3 @@ The (abridged) implementation of our example endpoint looks like this:
         }
     }
 
-
-The :code:`Connector` class implements an interface base provided by :doc:`jtlconnector </glossary/jtlconnector>` to ensure that all mandatory methods are defined.
-One of those methods is the :code:`initialize` method which is executed each time the connector is used. We use this method to instantiate or save any object that will be needed in following classes. The intended way to open access to those objects is by registering them in the DI container.
-In this example we also use the this method to call an installer class which then sets up any needed tables and writes the connector token the the config file.
-The connector class is also used to define specific classes like the PrimaryKeyMapper and the TokenValidator.
-The use of those classes will be explained later on.

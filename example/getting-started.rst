@@ -12,23 +12,22 @@ We are going to continue using PHP in the course of this book.
 Preliminary note
 ----------------
 
-All code specific for this example, i.e. code that is specific for the targeted software system that should be connected to JTL-Wawi, resides in the `jtl\\Connector\\Example` namespace.
+All code specific for this example, i.e. code that is specific for the targeted software system that should be connected to JTL-Wawi, resides in the `Jtl\\Connector\\Example` namespace.
 You have to use a different namespace prefix for your implementation.
 A possible approach is to combine your company's name with the system you want JTL-Wawi to connect to.
 So if your company was named "ACME Inc." and you wanted to connect to your own hypothetic eCommerce platform called "ACME Shop" a suitable namespace prefix would be `Acme\\Connector\\AcmeShop`.
 
 .. note::
-    Consider the `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard document if you have any questions regarding the naming of PHP namespaces.
+    Consider the `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard document if you have any questions regarding to the naming of PHP namespaces.
 
 
-index.php
----------
+Entry point
+-----------
 
-`index.php` is the first script to be executed when JTL-Wawi tries to connect to JTL-Connector.
 Note that some software products require you to create a real plugin along with additional boilerplate code before you are able to pass execution to JTL-Connector.
 Consult the developer documentation of the target platform if you are unsure.
 
-During this book we assume that we place a file called index.php inside the directory `public/` which is the document root directory for `http://www.shopdomain.tld/jtlconnector/`.
+During this book we assume that we place a file called index.php inside the directory `public/` which is the document root directory for `http://www.shopdomain.tld/jtlconnector/` and the entry point of the example connector.
 It is up to you to make sure that this call succeeds in your environment before you may continue.
 
 .. code-block:: php
