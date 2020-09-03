@@ -23,17 +23,17 @@ The developer's guide to leverage the flexibility of JTL-Connector.
 
 .. include:: /book/map.rst.inc
 
-Connector example
------------------
+Connector tutorial
+------------------
 
 Get started by learning step by step how to write a connector implementation from scratch.
 
 .. toctree::
    :hidden:
 
-   example/index
+   tutorial/index
 
-.. include:: /example/map.rst.inc
+.. include:: /tutorial/map.rst.inc
 
 Plugins
 -------

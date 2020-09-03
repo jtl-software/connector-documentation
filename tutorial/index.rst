@@ -1,5 +1,5 @@
-Connector example
-=================
+Connector tutorial
+==================
 
 .. toctree::
    :hidden:
@@ -9,4 +9,4 @@ Connector example
    token-validator-class
    primary-key-mapper-class
 
-.. include:: /example/map.rst.inc
+.. include:: /tutorial/map.rst.inc

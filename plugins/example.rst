@@ -17,9 +17,9 @@ Example plugin in connector directory structure
     │   └── DemoPlugin
     │       └── Bootstrap.php
     ├── src
-    ├── some
     ├── other
-    └── directories
+    ├── directories
+    ├── var
     └── vendor
 
 

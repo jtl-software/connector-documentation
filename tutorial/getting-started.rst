@@ -1,8 +1,8 @@
 Getting started
 ===============
 
-This example provides the necessary information to get you started quickly.
-In this example we show you how to connect :doc:`JTL-Wawi </glossary/jtl-wawi>` to a PHP-based platform and enable it to synchronize data between the two systems.
+This tutorial provides the necessary information to get you started quickly.
+We will show you how to connect :doc:`JTL-Wawi </glossary/jtl-wawi>` to a PHP-based platform and enable it to synchronize data between the two systems.
 Although it is not technically required to use PHP for JTL-Connector, this language is the only language we officially support on the server side.
 
 While application environments like ASP.NET or Java can be used as well, you would then be required to implement the complete protocol logic by yourself.
