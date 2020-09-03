@@ -1,10 +1,6 @@
 JTL-Connector Documentation
 ===========================
 
-.. note::
-   This documentation is still *work in progress* and can and will change quite frequently.
-   You are encouraged to visit this page often to keep up with the most recent changes.
-
 .. image:: /_images/logo.png
    :alt:   Connector Welcome Page
 
@@ -12,8 +8,8 @@ JTL-Connector Documentation
 
 .. note::
 
-    This documentation assumes you have a working knowledge of PHP, :doc:`Composer </glossary/composer>` and Git.
-    You should be familiar with object-oriented PHP code and especially the use of namespaces and basic OOP principles.
+    This documentation assumes you have a working knowledge of PHP, :doc:`Composer </glossary/composer>` and git.
+    You should be familiar with object-oriented principles and relational databases.
 
 The book
 --------
