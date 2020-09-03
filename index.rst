@@ -23,7 +23,7 @@ The developer's guide to leverage the flexibility of JTL-Connector.
 
 .. include:: /book/map.rst.inc
 
-Example Connector
+Connector example
 -----------------
 
 Get started by learning step by step how to write a connector implementation from scratch.
