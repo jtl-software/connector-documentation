@@ -6,7 +6,7 @@ Token validator
 JTL-Connector uses an **authorization token** to authenticate clients and authorize access to the endpoint.
 This token is entered as synchronization password inside JTL-Wawi.
 As JTL-Connector strives to be as flexible as possible it does not enforce a certain procedure on how to store this password.
-It thus delegates this task to the endpoint, communicating via an object of interface `Jtl\\Connector\\Core\\Authentication\\TokenValidatorInterface <https://github.com/jtl-software/connector-core/blob/develop/src/Authentication/TokenValidatorInterface.php>`_.
+It thus delegates this task to the endpoint, communicating via an object of interface `Jtl\\Connector\\Core\\Authentication\\TokenValidatorInterface <https://github.com/jtl-software/core/blob/develop/src/Authentication/TokenValidatorInterface.php>`_.
 
 This interface consists of the method :code:`validate(string $token): bool`. It returns true if the given token is valid, false otherwise.
 

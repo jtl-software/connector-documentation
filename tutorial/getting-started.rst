@@ -77,5 +77,5 @@ Its function is to handle these requests and return results back to the applicat
 The application implementation and thus the protocol layer, too, is shared between all PHP-based endpoints.
 
 .. note::
-    It is **strongly recommended** to use the official implementation by JTL-Software (i.e. :doc:`jtlconnector </glossary/jtlconnector>`) because it is absolutely necessary for the protocol layer to be compatible with :doc:`JTL-Wawi </glossary/jtl-wawi>`'s expectations.
-    Your code only needs to make use of the classes and methods provided by :doc:`jtlconnector </glossary/jtlconnector>`.
+    It is **strongly recommended** to use the official implementation by JTL-Software (i.e. :doc:`core </glossary/core>`) because it is absolutely necessary for the protocol layer to be compatible with :doc:`JTL-Wawi </glossary/jtl-wawi>`'s expectations.
+    Your code only needs to make use of the classes and methods provided by :doc:`core </glossary/core>`.

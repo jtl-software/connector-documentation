@@ -12,7 +12,7 @@ Frequently used terms in our application environment.
     endpoint
     jtl-connector
     jtl-wawi
-    jtlconnector
+    core
     sqlite
 
 .. include:: /glossary/map.rst.inc

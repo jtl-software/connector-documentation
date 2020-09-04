@@ -10,31 +10,30 @@ JTL-Connector follows the same pattern for every request:
 
 <Request diagram>
 
-Incoming JSON requests are decoded and validated inside the :doc:`application </glossary/jtlconnector>`.
+Incoming JSON requests are decoded and validated inside the :doc:`core </glossary/core>`.
 It decodes the RPC requests and identifies the RPC parameters as well as the RPC method which has to be called.
 
 Each RPC method will be mapped to a controller method which will be invoked then.
 The RPC method :code:`product.push` thus maps to an invocation of the controller method :code:`Jtl\Connector\Example\Controller\Product::push()`.
 
 .. note::
-    The :doc:`application </glossary/jtlconnector>` handles requests by default but it can also be handled by the endpoint.
+    The :doc:`core </glossary/core>` handles requests by default but it can be also handled by the endpoint implementation.
 
 A controller method that is invoked by the application receives the RPC parameters as method arguments.
-The controller method performs the actual request and returns a certain result.
-This result is then being wrapped inside an RPC response and returned to the client.
+This result is getting wrapped into a RPC response and returned to the client.
 
 To review:
 
-- Each request executed by JTL-Wawi arrives as RPC call, encoded as a JSON object
-- The :doc:`application </glossary/jtlconnector>` decodes this request and determines the RPC parameters and method
-- The :doc:`application </glossary/jtlconnector>` or the endpoint maps the RPC method to its appropriate controller method and invokes it
-- The controller method performs the request and returns a result which in turn will be passed to the :doc:`application </glossary/jtlconnector>`
-- The :doc:`application </glossary/jtlconnector>` encodes this result as a valid RPC response and returns it to JTL-Wawi
+- Each request executed by JTL-Wawi arrives the endpoint as RPC call, encoded as a JSON object
+- The :doc:`core </glossary/core>` decodes this request and determines the RPC parameters and RPC method
+- The :doc:`core </glossary/core>` or the endpoint maps the RPC method to its appropriate controller method and invokes it
+- The controller method performs the request and returns a result which in turn will be passed to the :doc:`core </glossary/core>`
+- The :doc:`core </glossary/core>` encodes this result as a valid RPC response and returns it to JTL-Wawi
 
 Configuration
 -------------
 
-When creating Application class you can pass two optional arguments: config that implements ``Noodlehaus\ConfigInterface`` and ``Jtl\Connector\Core\Config\ConfigSchema`` class.
+When instantiating the connector application, you can pass two optional arguments: config that implements ``Noodlehaus\ConfigInterface`` and ``Jtl\Connector\Core\Config\ConfigSchema`` class.
 
 Let's focus on second one ``Jtl\Connector\Core\Config\ConfigSchema``. This class is used to define what parameters must/can contain config. In short it validates
 config class. You can use default parameters or extend this by your own.
