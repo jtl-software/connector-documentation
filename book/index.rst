@@ -12,7 +12,7 @@ The book
     features-matrix
     primary-key-mapper
     token-validator
-    config-schema
+    configuration
     application
 
 .. include:: /book/map.rst.inc

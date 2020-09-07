@@ -10,22 +10,13 @@ There are two ways of debugging your :doc:`Endpoint </glossary/endpoint>`.
 Server side
 -----------
 
-The :doc:`JTL-Connector </glossary/jtl-connector>` writes its own log files.
-All log files are by default located in var/log inside the connector directory.
-The default log directory can be changed in the config.json by using the ``log_dir`` parameter.
+The :doc:`endpoint </glossary/endpoint>` writes its own log files.
+All log files are located in var/log inside the connector directory by default.
+The default log directory can be changed in the configuration by using the ``log_dir`` parameter.
 The content of a log entry is a timestamp followed by the level and the log content itself.
-Keep in mind that on a production setting messages with DEBUG as level (checksum, database, rpc and session) are just logged if the log level in the config.json file is has to be set to ``debug``.
+Keep in mind that messages with DEBUG as level (checksum, database, rpc and session) are just logged when the log level in the configuration (``log.level``) has to be set to ``debug``.
 
-Log level and log format can be defined in the config.json.
-
-.. code-block:: json
-
-    {
-        "log": {
-            "format": "json",
-            "level": "debug"
-        }
-    }
+Log level and log format can be defined in the :doc:`configuration </book/configuration>`.
 
 Valid log formats are
 

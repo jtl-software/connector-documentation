@@ -14,13 +14,15 @@ Incoming JSON requests are decoded and validated inside the :doc:`core </glossar
 It decodes the RPC requests and identifies the RPC parameters as well as the RPC method which has to be called.
 
 Each RPC method will be mapped to a controller method which will be invoked then.
-The RPC method :code:`product.push` thus maps to an invocation of the controller method :code:`Jtl\Connector\Example\Controller\Product::push()`.
+
+.. note::
+    In the :doc:`Connector tutorial </tutorial/index>` the RPC method :code:`category.push` will be mapped to an invocation of the controller method :code:`Jtl\Connector\Example\Controller\CategoryController::push()`.
+
+A controller method which is invoked by the application, receives the RPC parameters as method arguments.
+The by controller method returned result is getting wrapped into a RPC response and returned to the client.
 
 .. note::
     The :doc:`core </glossary/core>` handles requests by default but it can be also handled by the endpoint implementation.
-
-A controller method that is invoked by the application receives the RPC parameters as method arguments.
-This result is getting wrapped into a RPC response and returned to the client.
 
 To review:
 

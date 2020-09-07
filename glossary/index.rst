@@ -9,10 +9,9 @@ Frequently used terms in our application environment.
     :hidden:
 
     composer
+    core
     endpoint
     jtl-connector
     jtl-wawi
-    core
-    sqlite
 
 .. include:: /glossary/map.rst.inc

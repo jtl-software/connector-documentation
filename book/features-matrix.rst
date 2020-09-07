@@ -1,7 +1,7 @@
 .. _features-matrix:
 
-The features matrix
-===================
+Features matrix
+===============
 
 It is very likely that your endpoint implementation does not support the full feature set JTL-Wawi offers.
 This might be due to limitations of the underlying target system or because of functionality that cannot be made compatible with JTL-Wawi because their respective concepts differ too much.
