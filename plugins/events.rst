@@ -74,7 +74,8 @@ How to create name for this event?
 4. RPC event
 ------------
 
-There is only one RPC event in Application that you can subscribe and it's before RPC packet deserialize.
+There are two RPC events in Application that you can subscribe. They are called before serialization and before
+response is sent.
 
 Event: ``Jtl\Connector\Core\Event\RpcEvent``
 

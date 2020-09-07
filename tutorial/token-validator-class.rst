@@ -3,7 +3,8 @@
 Token validator class
 =====================
 
-The :ref:`token validator <token-validator>` verifies all token which are used for authentication on the endpoint.
+The :ref:`token validator <token-validator>` verifies if token that is sent to endpoint is valid or not. It's endpoint
+responsibility to provide that information in ``validate(): bool`` method.
 
 .. code-block:: php
 

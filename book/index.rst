@@ -13,5 +13,6 @@ The book
     primary-key-mapper
     token-validator
     config-schema
+    application
 
 .. include:: /book/map.rst.inc
