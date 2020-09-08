@@ -64,3 +64,13 @@ What can be overwritten?:
 - Config
 - LoggerService
 - Logger
+
+
+Request handling
+----------------
+
+By default incoming request in handled by application in ``handleRequest`` method. It contains all required logic to
+process request.
+
+There is also possibility to handle request in :doc:`endpoint </glossary/endpoint>`. In order to achieve it endpoint
+must implement ``Jtl\Connector\Core\Connector\HandleRequestInterface``.

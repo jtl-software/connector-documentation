@@ -14,5 +14,6 @@ The book
     token-validator
     configuration
     application
+    checksum-loader
 
 .. include:: /book/map.rst.inc

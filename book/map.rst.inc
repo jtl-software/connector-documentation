@@ -8,3 +8,4 @@
 * :doc:`/book/token-validator`
 * :doc:`/book/configuration`
 * :doc:`/book/application`
+* :doc:`/book/checksum-loader`

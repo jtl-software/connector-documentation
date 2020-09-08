@@ -3,14 +3,16 @@
 Events
 ======
 
-Events are fired in Application class on specific moments and can be classified as 4 main types by event name creation.
-You can easily build event name using static methods from ``Jtl\Connector\Core\Definition\Event`` class.
+Events are dispatched in :doc:`Application </book/application>` class in specific moments and can be classified as 4 main types by event name creation.
+You can easily build event name using static helper methods from ``Jtl\Connector\Core\Definition\Event`` class.
+By using events you can add functionality to the main entities which themselves cannot be added. The technology behind the
+event system is explained in the next chapter, see :ref:`plugin-architecture`.
 
 1. Endpoint controller related
 ------------------------------
 
 This is most common event type. Can be used for model properties manipulations. Events listed below are related to
-main entities. If event class is missing then ``Jtl\Connector\Core\Event\ModelEvent`` will be used.
+main model entities. If event class is missing then ``Jtl\Connector\Core\Event\ModelEvent`` will be used.
 
 Example events ( see full list in `/src/Event` folder ):
 
@@ -22,18 +24,18 @@ How to create name for this event?
 
 .. code-block:: php
 
-        use Jtl\Connector\Core\Definition\Action;
-        use Jtl\Connector\Core\Definition\Controller;
-        use Jtl\Connector\Core\Definition\Event;
+    use Jtl\Connector\Core\Definition\Action;
+    use Jtl\Connector\Core\Definition\Controller;
+    use Jtl\Connector\Core\Definition\Event;
 
-        Event::createEventName(Controller::PRODUCT, Action::PULL, Event::BEFORE);
+    Event::createEventName(Controller::PRODUCT, Action::PULL, Event::BEFORE);
 
 
 2. Core controller events
 -------------------------
 
 This event type is connector core events related. Can be used if you want to override data
-that is send by connector core to client.
+that is send by connector core to client or in opposite direction.
 
 Event examples:
 
@@ -45,11 +47,11 @@ How to create name for this event?
 
 .. code-block:: php
 
-        use Jtl\Connector\Core\Definition\Action;
-        use Jtl\Connector\Core\Definition\Controller;
-        use Jtl\Connector\Core\Definition\Event;
+    use Jtl\Connector\Core\Definition\Action;
+    use Jtl\Connector\Core\Definition\Controller;
+    use Jtl\Connector\Core\Definition\Event;
 
-        Event::createCoreEventName(Controller::CONNECTOR, Action::FEATURES, Event::AFTER);
+    Event::createCoreEventName(Controller::CONNECTOR, Action::FEATURES, Event::AFTER);
 
 3. Handle events
 ----------------
@@ -65,11 +67,11 @@ How to create name for this event?
 
 .. code-block:: php
 
-        use Jtl\Connector\Core\Definition\Action;
-        use Jtl\Connector\Core\Definition\Controller;
-        use Jtl\Connector\Core\Definition\Event;
+    use Jtl\Connector\Core\Definition\Action;
+    use Jtl\Connector\Core\Definition\Controller;
+    use Jtl\Connector\Core\Definition\Event;
 
-        Event::createHandleEventName(Controller::PRODUCT, Action::PULL, Event::PULL);
+    Event::createHandleEventName(Controller::PRODUCT, Action::PULL, Event::PULL);
 
 4. RPC event
 ------------
@@ -83,21 +85,6 @@ How to create name for this event?
 
 .. code-block:: php
 
-        use Jtl\Connector\Core\Definition\Event;
+    use Jtl\Connector\Core\Definition\Event;
 
-        Event::createRpcEventName(Event::BEFORE);
-
-
-Every event is generated on the fly for all calls that are processed by the connector and consist of the pats:
-An order like "Before" or "After"
-A controller like "Category" or "Product"
-An action like "Push" or "Pull"
-
-Consequential each of the :ref:`data-models` has eight different events which you can subscribe e.g. ProductAfterPushEvent.
-Using the Event::createEventName() function you can define an eventname to be registered in the application.
-Alternatively, if you want to create plugins on a more general scale, you can use the Event::createHandleEventName() function.
-
-Besides the events for the entities there is a special event, the ``CoreConnectorAfterFeaturesEvent``.
-By using this event you can add functionality to the main entities which themselves cannot be added.
-
-The technology behind the event system is explained in the next chapter, see :ref:`plugin-architecture`.
+    Event::createRpcEventName(Event::BEFORE);

@@ -9,8 +9,8 @@ Integration into architecture
 -----------------------------
 
 If we take the already explained architecture from :ref:`connector-architecture`, we can add a third layer, the Plugin.
-From within the application either the Before Event is fired before the request is handled by the :doc:`Endpoint </glossary/endpoint>` or the After Event is fired after the endpoint handled it.
-This way of architecture decouples :doc:`Endpoint </glossary/endpoint>` and plugin so that none of them has to know about the other.
+From within the application either the Before Event is fired before the request is handled by the :doc:`endpoint </glossary/endpoint>` or the After Event is fired after the endpoint handled it.
+This way of architecture decouples :doc:`endpoint </glossary/endpoint>` and plugin so that none of them has to know about the other.
 
 .. image:: /_images/plugin_flow.png
 

@@ -26,9 +26,9 @@ Example plugin in connector directory structure
 Bootstrap.php
 -------------
 
-The following :code:`Bootstrap` class is placed in the folder plugins/DemoPlugin and therefore has the namespace DemoPlugin.
+The following :code:`Bootstrap` class is placed in the folder plugins/DemoPlugin and therefore has the namespace :code:`DemoPlugin`.
 Regarding to the `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard the entry point of the plugin has to be called Bootstrap.
-In addition to the name the :code:`IPlugin` interface has to be implemented in order to be detected by the Connector-Core autoloader.
+In addition to the name the :code:`PluginInterface` interface has to be implemented in order to be detected by the :doc:`core </glossary/core>` autoloader.
 There is no other action needed to register the plugin.
 
 .. code-block:: php
@@ -80,4 +80,4 @@ As defined in our :code:`Bootstrap.php` the :code:`handle` method will be called
 The passed parameter contains an event. Via a getter method you have access to the main entity of the event.
 In this case :code:`$event->getProduct()` returns the object. It can be modified in a before event or used like in this example in an after event.
 
-That is basically all you need to know if you want to extend the :doc:`Endpoint </glossary/endpoint>` with a plugin.
+That is basically all you need to know if you want to extend the :doc:`endpoint </glossary/endpoint>` with a plugin.
