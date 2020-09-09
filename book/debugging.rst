@@ -16,7 +16,7 @@ The default log directory can be changed in the configuration by using the ``log
 The content of a log entry is a timestamp followed by the level and the log content itself.
 Keep in mind that messages with DEBUG as level (checksum, database, rpc and session) are just logged when the log level in the configuration (``log.level``) has to be set to ``debug``.
 
-Log level and log format can be defined in the :doc:`configuration </book/configuration>`.
+Log format and log level can be defined in the :doc:`configuration </book/configuration>`.
 
 Valid log formats are
 
@@ -58,6 +58,7 @@ More channels can be added by using the logger service from the application. A n
 
 
 .. image:: /_images/debugging_server.png
+
 
 Using RPC viewer plugin
 -----------------------

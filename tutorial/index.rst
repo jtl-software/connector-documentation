@@ -1,5 +1,5 @@
-Connector tutorial
-==================
+Tutorial
+========
 
 .. toctree::
    :hidden:

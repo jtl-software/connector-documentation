@@ -1,4 +1,4 @@
-.. _config-schema:
+.. _configuration:
 
 Configuration
 =============

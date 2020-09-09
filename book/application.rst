@@ -1,76 +1,68 @@
 Application
 ===========
 
-Entry point for each request is ``Jtl\Connector\Core\Application\Application`` class. To properly serve request you should
-create instance of application with desired parameters and options and call ``run`` method.
+Entry point for each request is the ``Jtl\Connector\Core\Application\Application`` class. To properly serve the request you should
+create an instance of a connector application with desired parameters and options and call the ``run`` method.
 
 - ``Jtl\Connector\Core\Connector\ConnectorInterface $connector`` - instance of endpoint
 - ``string $connectorDir`` - root path to endpoint
-- ``Noodlehaus\ConfigInterface $config`` - (optional) config object for later use in core and connector
+- ``Noodlehaus\ConfigInterface $config`` - (optional) config object for use in core and endpoint
 - ``Jtl\Connector\Core\Config\ConfigSchema $configSchema`` - (optional) definition of what config object should have to be valid.
-  If you want to know more about config schema please check :ref:`config schema chapter <config-schema>`
-
-
-Subscribers (I/O data manipulations)
-------------------------------------
-
-We are using some data manipulators to made changes in input or output data. In this case data manipulations is related
-to serialize and deserialize JSON requests.
-
-.. note::
-    If you want to know more about handlers and subscribers please take a look at `jms/serializer <https://jmsyst.com/libs/serializer>`_.
-
-In serializer builder class ``Jtl\Connector\Core\Serializer\SerializerBuilder`` we are subscribing some events and also using some
-handlers. All changes are adapted to current models so there is no need to adapt model properties by your own.
-
-For example subscriber: ``Jtl\Connector\Core\Serializer\Subscriber\LanguageIsoSubscriber`` is responsible for language
-ISO standard converting from `ISO-639-2/B` to `ISO-639-1` and revert.
-
-In models you work with property called ``languageIso`` (`ISO-639-1`) but before it's sent to Wawi we must change it back to
-``languageISO`` (`ISO-639-2/B`) because it's Wawi standard.
-
-Subscriber is doing it after serialize and before deserialize so connector developer don't need to do that.
-
+  If you want to know more about the config schema please check the :ref:`configuration <configuration>` chapter
 
 Overwriting defaults
 --------------------
 
-Application provide some functions to change default used classes, please take a look at this functions and short
-explanation:
+The application provides some methods to change default used instances:
 
-- ``setSessionHandler`` - by default ``Jtl\Connector\Core\Session\SqliteSessionHandler`` is used but you can override it
-  by some other handler for example Symfony session handler
+- ``setSessionHandler`` - by default the ``Jtl\Connector\Core\Session\SqliteSessionHandler`` is used but it can be replaced
+  by another handler. A Symfony session handler could be used for instance.
 
-- ``setErrorHandler`` - by default ``Jtl\Connector\Core\Error\ErrorHandler`` can be changed to other handler that implements
-  ``Jtl\Connector\Core\Error\AbstractErrorHandler``.
+  .. note::
+      If you want to use a Symfony session handler, then you have to create an anonymous class which implements the ``Jtl\Connector\Core\Session\SessionHandlerInterface`` interface and extends the session handler class.
 
-- ``registerController`` - you can register your own controller class. Only requirement is that it you need to register
-  it by valid controller name, you can check it in Controller definitions
+      .. code-block:: php
+
+         $application->setSessionHandler(new class($pdoOrDsn) implements SessionHandlerInterface extends PdoSessionHandler);
+
+- ``setErrorHandler`` - by default ``Jtl\Connector\Core\Error\ErrorHandler`` can be changed to another handler which extends
+  ``Jtl\Connector\Core\Error\AbstractErrorHandler`` class.
+
+- ``registerController`` - if you want to register a controller which does not match the default controller name pattern (or any other reason). You can check the constants defined in the class ``Jtl\Connector\Core\Definition\Controller`` for all valid controller names in the :doc:`core </glossary/core>`.
 
 .. danger::
-    Please keep in mind that changing default behaviour of core requires some advance knowledge about how core works.
+    Please keep in mind that changing the default behaviour of the core, requires some advanced knowledge about how the core works.
 
-Application class is using DI container to manage objects inside in easy way. Because of that it's possible to overwrite
+The application class is using a `DI container <https://php-di.org/>`_ for handling objects and dependencies internally. Because of that it is possible to overwrite
 most of code functionalities by your own objects.
-
-What can be overwritten?:
-
-- IdentityLinker
-- ChecksumLinker
-- ChecksumLoader
-- PrimaryKeyMapper
-- TokenValidator
-- SessionHandler
-- Config
-- LoggerService
-- Logger
 
 
 Request handling
 ----------------
 
-By default incoming request in handled by application in ``handleRequest`` method. It contains all required logic to
-process request.
+By default incoming requests are handled by the application in the ``handleRequest`` method. It should contain all required logic to
+process the request.
 
-There is also possibility to handle request in :doc:`endpoint </glossary/endpoint>`. In order to achieve it endpoint
-must implement ``Jtl\Connector\Core\Connector\HandleRequestInterface``.
+If the ``handleRequest`` method does not match the requirements for your endpoint, it is also possible to handle the request directly in the :doc:`endpoint </glossary/endpoint>`. In order to achieve this, the connector class from the endpoint
+must implement the ``Jtl\Connector\Core\Connector\HandleRequestInterface`` interface.
+
+
+Subscribers (I/O data manipulations)
+------------------------------------
+
+We are using some data manipulators to change the input and output data in the :doc:`core </glossary/core>`. In this case the data manipulations are related
+to the de-/serialization of JSON requests and responses.
+
+.. note::
+    If you want to know more about handlers and subscribers, please take a look at `jms/serializer <https://jmsyst.com/libs/serializer>`_.
+
+In the serializer builder class ``Jtl\Connector\Core\Serializer\SerializerBuilder``, we are subscribing some events and also using some
+handlers. All changes are adapted to current models so there is no need to adapt model properties by your own.
+
+For instance the subscriber ``Jtl\Connector\Core\Serializer\Subscriber\LanguageIsoSubscriber`` is responsible for converting the language
+ISO standard from `ISO-639-2/B` to `ISO-639-1` and vice versa.
+
+All translatable core models own a property called ``languageIso`` (`ISO-639-1`). Before a translatable model will be send to JTL-Wawi the ``languageIso`` property must be transformed into
+``languageISO`` (`ISO-639-2/B`), because it is standard in JTL-Connector.
+
+The subscriber transforms the language property for de-/serialization, so connector developers do not need to take care about.
