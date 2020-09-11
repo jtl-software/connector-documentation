@@ -1,7 +1,7 @@
 Category controller
 ===================
 
-Category controller is one of many main controllers. Others are for example: Product, Manufacturer, Customer, CustomerOrder etc. you can find them in :ref:`features matrix <features-matrix>`.
+Category controller is one of main controllers (objects). Others are for example: Product, Manufacturer, Customer, CustomerOrder etc. you can find them in :ref:`data models <data-models>`.
 Category controller implementation in example connector contain of all basic methods that can be called:
 
 .. note::
