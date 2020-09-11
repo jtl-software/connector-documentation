@@ -28,7 +28,7 @@ Bootstrap.php
 
 The following :code:`Bootstrap` class is placed in the folder plugins/DemoPlugin and therefore has the namespace :code:`DemoPlugin`.
 Regarding to the `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard the entry point of the plugin has to be called Bootstrap.
-In addition to the name the :code:`PluginInterface` interface has to be implemented in order to be detected by the :doc:`core </glossary/core>` autoloader.
+In addition to the name the :code:`PluginInterface` interface has to be implemented in order to be detected by the :doc:`Core</glossary/core>` autoloader.
 There is no other action needed to register the plugin.
 
 .. code-block:: php

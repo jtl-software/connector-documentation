@@ -10,27 +10,25 @@ JTL-Connector follows the same pattern for every request:
 
 <Request diagram>
 
-Incoming JSON requests are decoded and validated inside the :doc:`core </glossary/core>`.
+Incoming JSON requests are decoded and validated inside the :doc:`Core</glossary/core>`.
 It decodes the RPC requests and identifies the RPC parameters as well as the RPC method which has to be called.
 
-Each RPC method will be mapped to a controller method which will be invoked then.
+Each RPC method will be mapped to a controller method which will be then invoked.
+
+In default implementation Application invoking controller method with RPC parameters as arguments.
+Data returned from method is converted back into a RPC response and returned to the client.
 
 .. note::
-    In the :doc:`Connector tutorial </tutorial/index>` the RPC method :code:`category.push` will be mapped to an invocation of the controller method :code:`Jtl\Connector\Example\Controller\CategoryController::push()`.
-
-A controller method which is invoked by the application, receives the RPC parameters as method arguments.
-The by controller method returned result is getting wrapped into a RPC response and returned to the client.
-
-.. note::
-    The :doc:`core </glossary/core>` handles requests by default but it can be also handled by the endpoint implementation.
+    The :doc:`Core</glossary/core>` handles requests by default but it can be also handled by the endpoint implementation.
+    You can check more about it :ref:`here <request_handling>`.
 
 To review:
 
 - Each request executed by JTL-Wawi arrives the endpoint as RPC call, encoded as a JSON object
-- The :doc:`core </glossary/core>` decodes this request and determines the RPC parameters and RPC method
-- The :doc:`core </glossary/core>` or the endpoint maps the RPC method to its appropriate controller method and invokes it
-- The controller method performs the request and returns a result which in turn will be passed to the :doc:`core </glossary/core>`
-- The :doc:`core </glossary/core>` encodes this result as a valid RPC response and returns it to JTL-Wawi
+- The :doc:`Core</glossary/core>` decodes this request and determines the RPC parameters and RPC method
+- The :doc:`Core</glossary/core>` or the endpoint maps the RPC method to its appropriate controller method and invokes it
+- The controller method performs the request and returns a result which in turn will be passed to the :doc:`Core</glossary/core>`
+- The :doc:`Core</glossary/core>` encodes this result as a valid RPC response and returns it to JTL-Wawi
 
 Configuration
 -------------
@@ -38,15 +36,15 @@ Configuration
 When instantiating the connector application, you can pass two optional arguments: config that implements ``Noodlehaus\ConfigInterface`` and ``Jtl\Connector\Core\Config\ConfigSchema`` class.
 
 Let's focus on second one ``Jtl\Connector\Core\Config\ConfigSchema``. This class is used to define what parameters must/can contain config. In short it validates
-config class. You can use default parameters or extend this by your own.
+config class. You can use default parameters or extend this by your own. You can read more about configuration later in this book.
 
 Config class should implement ``Noodlehaus\ConfigInterface`` class interface. By default you can use ``Jtl\Connector\Core\Config\FileConfig``.
 
 Core definitions classes
 ------------------------
 
-New core contain special classes in ``Jtl\Connector\Core\Definition`` namespace. Definitions are describing connector environment in different parts.
-Here are
+Core contain special classes in ``Jtl\Connector\Core\Definition`` namespace. Definitions are describing connector environment in different parts.
+Here is list with short description about them:
 
 - Action
     - contain all action names that can be called. Can be used to check if action belongs to core or endpoint.

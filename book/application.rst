@@ -28,7 +28,7 @@ The application provides some methods to change default used instances:
 - ``setErrorHandler`` - by default ``Jtl\Connector\Core\Error\ErrorHandler`` can be changed to another handler which extends
   ``Jtl\Connector\Core\Error\AbstractErrorHandler`` class.
 
-- ``registerController`` - if you want to register a controller which does not match the default controller name pattern (or any other reason). You can check the constants defined in the class ``Jtl\Connector\Core\Definition\Controller`` for all valid controller names in the :doc:`core </glossary/core>`.
+- ``registerController`` - if you want to register a controller which does not match the default controller name pattern (or any other reason). You can check the constants defined in the class ``Jtl\Connector\Core\Definition\Controller`` for all valid controller names in the :doc:`Core</glossary/core>`.
 
 .. danger::
     Please keep in mind that changing the default behaviour of the core, requires some advanced knowledge about how the core works.
@@ -36,6 +36,7 @@ The application provides some methods to change default used instances:
 The application class is using a `DI container <https://php-di.org/>`_ for handling objects and dependencies internally. Because of that it is possible to overwrite
 most of code functionalities by your own objects.
 
+.. _request_handling:
 
 Request handling
 ----------------
@@ -50,7 +51,7 @@ must implement the ``Jtl\Connector\Core\Connector\HandleRequestInterface`` inter
 Subscribers (I/O data manipulations)
 ------------------------------------
 
-We are using some data manipulators to change the input and output data in the :doc:`core </glossary/core>`. In this case the data manipulations are related
+We are using some data manipulators to change the input and output data in the :doc:`Core</glossary/core>`. In this case the data manipulations are related
 to the de-/serialization of JSON requests and responses.
 
 .. note::

@@ -8,7 +8,7 @@ JTL-Connector Documentation
 
 .. note::
 
-    This documentation assumes you have a working knowledge of PHP, :doc:`Composer </glossary/composer>` and git.
+    This documentation assumes you have a working knowledge of PHP, composer and git.
     You should be also familiar with object-oriented principles and relational databases.
 
 The book
@@ -71,3 +71,13 @@ Frequently used technical terms in our application environment.
    glossary/index
 
 .. include:: /glossary/map.rst.inc
+
+Links
+--------
+
+List of links related to connector
+
+.. toctree::
+   :hidden:
+
+   links

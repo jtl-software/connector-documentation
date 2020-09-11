@@ -8,7 +8,6 @@ Frequently used terms in our application environment.
 .. toctree::
     :hidden:
 
-    composer
     core
     endpoint
     jtl-connector

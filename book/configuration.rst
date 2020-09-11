@@ -5,7 +5,7 @@ Configuration
 
 The class ``Jtl\Connector\Core\Config\ConfigSchema`` is used to define the structure of the configuration for the endpoint. It consists of a collection of parameters. A parameter is defined by the ``Jtl\Connector\Core\Config\ConfigParameter`` class on the other hand.
 
-The following parameters are already defined and required by the :doc:`core </glossary/core>`:
+The following parameters are already defined and required by the :doc:`Core</glossary/core>`:
 
 ============= ========= ======================================
 Option        Data type Default value
