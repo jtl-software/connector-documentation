@@ -4,7 +4,7 @@ Book
 .. toctree::
     :hidden:
 
-    preface
+    introduction
     fundamentals
     architecture
     protocol-basics

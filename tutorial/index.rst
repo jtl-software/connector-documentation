@@ -5,7 +5,7 @@ Tutorial
    :hidden:
 
    getting-started
-   preparing-database-schema
+   database-schema
    connector-class
    token-validator-class
    primary-key-mapper-class

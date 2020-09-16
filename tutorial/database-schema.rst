@@ -1,11 +1,12 @@
-Preparing database schema
-=========================
+Database schema
+===============
 
-Example connector needs a place to store data that we send. In this case we will use MySQL as database and file that
-already contains ready to use schema ``scripts/schema.sql``.
+In our tutorial the connector needs a place to store data for the shop and the mappings. In this case we will use MySQL and a file that
+already contains a ready to use schema ``scripts/schema.sql``. All tables represent the shop database, except the table ``mapping``. It is the place
+where objects inside JTL-Wawi with the same objects in the shop are getting linked.
 
-Assuming that you have correct database connection parameters in ``config/config.json`` table schema will be created at
-first call to the connector. Then lock file will be created in ``CONNECTOR_DIR`` to avoid second execution of ``schema.sql``.
+Assuming that valid database connection parameters are defined in ``config/config.json``, a table schema will be created within the
+first request to the connector. A file ``{connector_dir}/installer.lock`` will be created then, to avoid the second execution of ``schema.sql``.
 
 .. code-block:: sql
 

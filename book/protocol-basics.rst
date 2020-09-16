@@ -2,7 +2,7 @@ Protocol basics
 ===============
 
 JTL-Connector uses a protocol similar to JSON-RPC, along with some vendor-specific modifications.
-To fully understand how an endpoint works, one needs at least a basic understanding of its function.
+To fully understand how an endpoint works, at least a basic understanding of its function is required.
 
 As stated earlier, JTL-Connector follows the MVC (Model-View-Controller) pattern.
 The :doc:`Core</glossary/core>` library provides both models and view logic.
@@ -14,8 +14,8 @@ They must stay compatible for JTL-Connector to work properly with JTL-Wawi.
 RPC Protocol versioning
 -----------------------
 
-In the future data structure changes inside :doc:`Core</glossary/core>` are likely to happen.
-These modifications become necessary when new functionality is being introduced or existing functionality changes its behaviour in a way that breaks BC (backwards compatibility).
+In the future, data structure changes inside :doc:`Core</glossary/core>` are likely to happen.
+These modifications become necessary when new functionality is being introduced or existing functionality changes its behaviour in a way that breaks backwards compatibility (BC).
 To detect incompatibilities between the version of JTL-Wawi and the models used by the running endpoint, the models carry a **protocol version** kept by :doc:`Core</glossary/core>`.
 JTL-Wawi verifies this protocol version and is thus able to detect when its own version number and the one communicated by the endpoint do not match.
 In this case an error message appears in JTL-Wawi and the synchronization process is aborted.
@@ -40,6 +40,7 @@ The main objects are:
 - Category
 - Customer
 - CustomerOrder
+- CrossSelling
 - DeliveryNote
 - GlobalData
 - Image

@@ -3,13 +3,13 @@
 Connector class
 ===============
 
-JTL-Connector makes use of an RPC-style communication protocol together with JTL-Wawi.
-To write a full-featured endpoint implementation you do not have to know any detail on how this has been implemented.
-At the moment it is enough to say that this protocol provides method call semantics to your endpoint, i.e. you provide methods, grouped into several RPC objects, that can be called from the client.
+JTL-Connector makes use of a communication protocol in RPC-style.
+To write a full-featured endpoint implementation, you do not have to know any detail on how this has been implemented.
+It is enough to say that this protocol provides method call semantics to your endpoint, i.e. you provide methods, grouped into several RPC objects, that can be called from the client (JTL-Wawi mostly).
 Those methods, of course, can have parameters.
 
 All details of the communication, protocol decoding and verifications are abstracted away by :doc:`Core</glossary/core>`.
-The main hub for all valid requests is the **Application** class whose job is to pass RPC calls to the respective controllers. It also uses the **Connector** class to initialize the endpoint environment.
+The main hub for all valid requests is the **Jtl\Connector\Core\Application\Application** class, whose job is to pass RPC calls to the respective controllers. It is depending on an instance of a class which has implemented the **Jtl\Connector\Core\Connector\ConnectorInterface** interface, to initialize the endpoint environment.
 
 The :code:`Connector` class implements an interface base provided by :doc:`Core</glossary/core>` to ensure that all mandatory methods are defined.
 One of those methods is the :code:`initialize` method which is executed each time the connector is used. This method can be used to instantiate or save any object that will be needed in following classes. The intended way to open access to those objects is by registering them in the DI container.

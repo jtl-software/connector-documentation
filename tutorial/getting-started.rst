@@ -2,14 +2,14 @@ Getting started
 ===============
 
 .. note::
-    Full example connector implementation is available in our Github repository `connector-example <https://github.com/jtl-software/connector-example>`_
+    The full connector implementation of our tutorial is available on `Github <https://github.com/jtl-software/connector-example>`_.
 
-This tutorial provides the necessary information to get you started quickly.
-We will show you how to connect :doc:`JTL-Wawi </glossary/jtl-wawi>` to a PHP-based platform and enable it to synchronize data between the two systems.
-Although it is not technically required to use PHP for JTL-Connector, this language is the only language we officially support on the server side.
+This tutorial provides necessary information to get you started quickly.
+We will explain how to connect :doc:`JTL-Wawi </glossary/jtl-wawi>` to a PHP-based platform as well as how to synchronize data between the two systems.
+Although it is not technically required to use PHP for JTL-Connector, this language is the only language we officially support on server side.
 
 While application environments like ASP.NET or Java can be used as well, you would then be required to implement the complete protocol logic by yourself.
-Of course you could mimic the structure of the provided PHP library, but this goes far beyond the scope of this beginner's guide.
+Of course you could mimic the structure of the provided PHP library, but this goes far beyond the scope of this tutorial.
 We are going to continue using PHP in the course of this book.
 
 Preliminary note
@@ -18,7 +18,7 @@ Preliminary note
 All code specific for this example, i.e. code that is specific for the targeted software system that should be connected to JTL-Wawi, resides in the `Jtl\\Connector\\Example` namespace.
 You have to use a different namespace prefix for your implementation.
 A possible approach is to combine your company's name with the system you want JTL-Wawi to connect to.
-So if your company was named "ACME Inc." and you wanted to connect to your own hypothetic eCommerce platform called "ACME Shop" a suitable namespace prefix would be `Acme\\Connector\\AcmeShop`.
+So if your company was named "ACME Inc." and you wanted to connect to your own hypothetic eCommerce platform called "ACME Shop", a suitable namespace prefix would be `Acme\\Connector\\AcmeShop`.
 
 .. note::
     Consider the `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard document if you have any questions regarding to the naming of PHP namespaces.
@@ -27,11 +27,15 @@ So if your company was named "ACME Inc." and you wanted to connect to your own h
 Entry point
 -----------
 
-Note that some software products require you to create a real plugin along with additional boilerplate code before you are able to pass execution to JTL-Connector.
-Consult the developer documentation of the target platform if you are unsure.
+.. note::
+    Some software products require you to create a real plugin along with additional boilerplate code, before you are able to pass execution to JTL-Connector.
+    Consult the developer documentation of the target platform if you are unsure.
 
-During this book we assume that we place a file called index.php inside the directory `public/` which is the document root directory for `http://www.shopdomain.tld/jtlconnector/` and the entry point of the example connector.
+The entry point for the connector in this tutorial is a file called ``public/index.php``. It will be executed when the url ``https://www.shopdomain.tld/jtlconnector`` is requested.
 It is up to you to make sure that this call succeeds in your environment before you may continue.
+
+.. note::
+    `www.shopdomain.tld` is a placeholder for a valid shop domain.
 
 .. code-block:: php
 
@@ -77,5 +81,5 @@ Its function is to handle these requests and return results back to the applicat
 The application implementation and thus the protocol layer, too, is shared between all PHP-based endpoints.
 
 .. note::
-    It is **strongly recommended** to use the official implementation by JTL-Software (i.e. :doc:`Core</glossary/core>`) because it is absolutely necessary for the protocol layer to be compatible with :doc:`JTL-Wawi </glossary/jtl-wawi>`'s expectations.
-    Your code only needs to make use of the classes and methods provided by :doc:`Core</glossary/core>`.
+    It is **strongly recommended** to use the official implementation by JTL-Software, because it is absolutely necessary for the protocol layer to be compatible with :doc:`JTL-Wawi </glossary/jtl-wawi>`.
+    Your endpoint implementation just needs to make use of the classes and methods provided by the :doc:`Core</glossary/core>`.

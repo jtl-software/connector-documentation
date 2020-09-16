@@ -1,4 +1,4 @@
-* :doc:`/book/preface`
+* :doc:`/book/introduction`
 * :doc:`/book/fundamentals`
 * :doc:`/book/architecture`
 * :doc:`/book/protocol-basics`
