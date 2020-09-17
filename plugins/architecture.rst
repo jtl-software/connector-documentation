@@ -8,7 +8,7 @@ Regarding the architecture the general structure is explained in the next sectio
 Integration into architecture
 -----------------------------
 
-If we take the already explained architecture from :ref:`connector-architecture`, we can add a third layer, the Plugin.
+If we take the already explained :ref:`architecture<architecture>`, we can add a third layer, the Plugin.
 From within the application either the Before Event is fired before the request is handled by the :doc:`endpoint </glossary/endpoint>` or the After Event is fired after the endpoint handled it.
 This way of architecture decouples :doc:`endpoint </glossary/endpoint>` and plugin so that none of them has to know about the other.
 

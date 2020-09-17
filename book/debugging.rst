@@ -3,7 +3,7 @@
 Debugging
 =========
 
-There are two ways of debugging your :doc:`Endpoint </glossary/endpoint>`.
+There are two ways of debugging an :doc:`endpoint </glossary/endpoint>`.
 
 .. _debugging-server:
 
@@ -11,12 +11,14 @@ Server side
 -----------
 
 The :doc:`endpoint </glossary/endpoint>` writes its own log files.
-All log files are located in var/log inside the connector directory by default.
-The default log directory can be changed in the configuration by using the ``log_dir`` parameter.
+All log files are located in ``{connector_dir}/var/log`` by default.
+The log directory can be changed in the :doc:`configuration </book/configuration>` by using the ``log_dir`` parameter.
 The content of a log entry is a timestamp followed by the level and the log content itself.
-Keep in mind that messages with DEBUG as level (checksum, database, rpc and session) are just logged when the log level in the configuration (``log.level``) has to be set to ``debug``.
 
-Log format and log level can be defined in the :doc:`configuration </book/configuration>`.
+.. note::
+    Keep in mind that DEBUG messages (checksum, database, rpc and session) are only logged when the log level in the configuration (``log.level``) is set to ``debug``.
+
+Log format and log level can be defined in the :doc:`configuration </book/configuration>` as well.
 
 Valid log formats are
 
@@ -39,7 +41,7 @@ Valid log levels are
 * notice
 * warning
 
-All default log files listed below are suffixed by the current date in ISO 8601 format and have the file type log.
+All default log files listed below are suffixed by the current date in ISO 8601 format and have the file extension log.
 
 * checksum: The linking, reading and writing of the checksums are written into this file.
 * global: Any log information from endpoint controller is written into this file
@@ -60,14 +62,14 @@ More channels can be added by using the logger service from the application. A n
 .. image:: /_images/debugging_server.png
 
 
-Using RPC viewer plugin
------------------------
+RPC viewer plugin
+-----------------
 
-Special plugin that is event based and listen for RPC calls before and after action can also be used. Plugin has GUI
-interface that shows in realtime communication between client and :doc:`endpoint </glossary/endpoint>`. In order to use it you need to put it
-inside ``plugins`` folder and open url that points into that directory like http://acme-shop.com/{path_to_connector}/plugins/RpcViewer/index.php
+The RPC viewer is an event based plugin, which is listening for RPC calls before and after an action is executed. It has a web interface
+that shows the communication between client and :doc:`endpoint </glossary/endpoint>` in realtime. In order to use it, you need to put it
+inside the ``{connector_dir}/plugins/RpcViewer`` directory, which has to be accessed over a web server.
 
-You can find this plugin in our `github repository <https://github.com/jtl-software/connector-plugin-rpcviewer>`_.
+You can find the plugin on `GitHub <https://github.com/jtl-software/connector-plugin-rpcviewer>`_.
 
 .. image:: /_images/rpc_viewer.png
 
@@ -77,11 +79,11 @@ Client side
 -----------
 
 On client side the 'Connector Tester' tool for Windows can be used.
-It shows the direct RPC output in form of JSON tree structure or HTML.
+It shows the direct RPC output in form of a JSON tree structure or HTML.
 The response time is shown as well.
 All available RPC calls can be tested with this software.
-It is very useful if you are at the beginning of you endpoint or plugin implementation.
-The tester does not save mappings which means that you do not have to delete them every time you want to test the pull or statistics method.
+It can be very useful when you just started to implement an endpoint or a connector plugin as well as for debugging or testing purposes.
+The tester does not send connector ACKs to the endpoint automatically, so you do not have to delete the mappings every time you want to test a pull or statistics request.
 
 The Connector tester can be downloaded `here <https://downloads.jtl-connector.de/tester/connector-tester.zip>`_.
 

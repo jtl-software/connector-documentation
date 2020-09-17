@@ -1,7 +1,6 @@
 * :doc:`/book/introduction`
 * :doc:`/book/fundamentals`
-* :doc:`/book/architecture`
-* :doc:`/book/protocol-basics`
+* :doc:`/book/rpc-protocol`
 * :doc:`/book/debugging`
 * :doc:`/book/features-matrix`
 * :doc:`/book/primary-key-mapper`

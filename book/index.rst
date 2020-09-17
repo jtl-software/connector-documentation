@@ -6,14 +6,13 @@ Book
 
     introduction
     fundamentals
-    architecture
-    protocol-basics
+    application
+    checksum-loader
+    configuration
     debugging
     features-matrix
     primary-key-mapper
+    rpc-protocol
     token-validator
-    configuration
-    application
-    checksum-loader
 
 .. include:: /book/map.rst.inc

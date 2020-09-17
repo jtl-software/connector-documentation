@@ -13,6 +13,6 @@ A single set of properties represents the relation of an object between JTL-Wawi
 .. note::
     In most cases the **endpoint ID** is the primary key of the object in the shop.
 
-All primary key mapper classes implement the interface `Jtl\\Connector\\Core\\Mapper\\PrimaryKeyMapperInterface <https://github.com/jtl-software/core/blob/develop/src/Mapper/PrimaryKeyMapperInterface.php>`_.
+All primary key mapper classes must implement the `Jtl\\Connector\\Core\\Mapper\\PrimaryKeyMapperInterface <https://github.com/jtl-software/core/blob/develop/src/Mapper/PrimaryKeyMapperInterface.php>`_ interface.
 This interface enforces simple CRUD operations on all available mappings.
-It is up to the endpoint implementation to decide how these mappings are stored providing that they are somehow persistent.
+It is up to the endpoint implementation to decide how these mappings are stored, providing that they are somehow persistent.

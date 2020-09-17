@@ -8,7 +8,7 @@ This might be due to limitations of the underlying target system or because of f
 To tell JTL-Wawi which features of JTL-Connector are supported by your endpoint implementation, you are required to build a **features matrix** and ship it with your endpoint code.
 
 Basically, this is a simple JSON file containing information about which features are supported or not.
-An example of a connector's features matrix is shown below to give you an idea of the basic concept behind this file.
+An example of a connector's features matrix is shown below, to give you an idea of the basic concept behind this file.
 The file is also available on `GitHub <https://github.com/jtl-software/connector-example/blob/master/config/features.json>`_.
 
 .. code-block:: json
@@ -487,55 +487,58 @@ The file is also available on `GitHub <https://github.com/jtl-software/connector
     }
 
 The file divides into two main parts.
-The first part lists the supported object types together with information in which context they can be used (e.g. whether they can be updated by JTL-Wawi or are read-only and whether they can be deleted programmatically).
+
+Entities
+--------
+
+The first part lists the exiting entities with information in which context they can be used (e.g. whether they can be updated by JTL-Wawi or are read-only and whether they can be deleted programmatically).
 
 Special function flags
 ----------------------
 
 The second part sets special function flags.
-These flags become important when your target system e.g. needs to receive information in a special order.
+These flags tell the client about endpoint specific handling logic.
 
 An example is the creation of variation combinations, i.e. configurable products specified in a parent-child relationship.
 Some systems need to have all available child products before the parent product may be created, maybe, because the parent product must be equipped with a list of all available child products.
 Other systems might need to create the parent product first, e.g. because all child products keep track of their master by using some kind of database foreign key that has to exist.
 
-Nevertheless, you are able to influence JTL-Wawi's behaviour when preparing its operations by configuring your function flags correctly.
+Nevertheless, you are able to influence JTL-Wawi's behaviour when preparing its operations by configuring the function flags correctly.
 Most of the flag names are pretty self-explanatory.
 Some of them require a deep understanding of the targeted system to decide which value to set for a certain function flag.
 
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Flag                                       | Description                                                                                                                                                                    |
-+=============================+===============================================================================================================================================================================================+
-| var_combination_child_first                | Used to determine whether child products or parent products must be inserted first when uploading variation combination from JTL-Wawi.                                         |
-|                                            | A :code:`true` value determines that the child product will be inserted first and the parent products will be the last products during the complete synchronization operation. |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| product_images_supported                   | Determine if product images are supported by connector.                                                                                                                        |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| category_images_supported                  | Determine if category images are supported by connector.                                                                                                                       |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| manufacturer_images_supported              | Determine if manufacturer images are supported by connector.                                                                                                                   |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| specific_images_supported                  | Determine if specific images are supported by connector.                                                                                                                       |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| specific_value_images_supported            | Determine if specific value images are supported by connector.                                                                                                                 |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| config_group_images_supported              | Determine if config group images are supported by connector.                                                                                                                   |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| product_variation_value_images_supported   | Determine if product variation value images are supported by connector.                                                                                                        |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| variation_products_supported               | Determine if simple variation for product are supported.                                                                                                                       |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| variation_combinations_supported           | Determine if variation combinations for product are supported.                                                                                                                 |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| set_articles_supported                     | Determine if set articles for product are supported.                                                                                                                           |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| free_field_supported                       | Determine if custom fields are supported.                                                                                                                                      |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| needs_category_root                        | If set to :code:`true` JTL-Wawi will send each time category root on `category.push`                                                                                           |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| translated_attributes_supported            | Determine if translated attributes are supported                                                                                                                               |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| send_all_acks                              | If set to :code:`true` JTL-Wawi will send ack for all pull requests                                                                                                            |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| disable_statistics                         | Determine if JTL-Wawi will call statistics before pull call                                                                                                                    |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| Flag (Boolean)                             | Description                                                                                                 |
++============================================+=============================================================================================================+
+| var_combination_child_first                | Determines if product variation children will be imported into JTL-Wawi before the product variation parent.|
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| product_images_supported                   | Determines if product images are supported by connector.                                                    |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| category_images_supported                  | Determines if category images are supported by connector.                                                   |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| manufacturer_images_supported              | Determines if manufacturer images are supported by connector.                                               |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| specific_images_supported                  | Determines if specific images are supported by connector.                                                   |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| specific_value_images_supported            | Determines if specific value images are supported by connector.                                             |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| config_group_images_supported              | Determines if config group images are supported by connector.                                               |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| product_variation_value_images_supported   | Determines if product variation value images are supported by connector.                                    |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| variation_products_supported               | Determines if simple variation for product are supported.                                                   |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| variation_combinations_supported           | Determines if variation combinations for product are supported.                                             |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| set_articles_supported                     | Determines if set articles for product are supported.                                                       |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| free_field_supported                       | Determines if custom fields are supported.                                                                  |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| needs_category_root                        | Determines if JTL-Wawi sends each time a root category on `category.push`.                                  |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| translated_attributes_supported            | Determines if translated attributes are supported.                                                          |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| send_all_acks                              | Determines if JTL-Wawi sends an ack for any pull requests.                                                  |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| disable_statistics                         | Determines if JTL-Wawi has not to call statistics before pull call.                                         |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------+

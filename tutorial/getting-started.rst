@@ -15,13 +15,13 @@ We are going to continue using PHP in the course of this book.
 Preliminary note
 ----------------
 
-All code specific for this example, i.e. code that is specific for the targeted software system that should be connected to JTL-Wawi, resides in the `Jtl\\Connector\\Example` namespace.
+All code specific for this tutorial, i.e. code that is specific for the targeted software system that should be connected to JTL-Wawi, resides in the ``Jtl\\Connector\\Example`` namespace.
 You have to use a different namespace prefix for your implementation.
-A possible approach is to combine your company's name with the system you want JTL-Wawi to connect to.
-So if your company was named "ACME Inc." and you wanted to connect to your own hypothetic eCommerce platform called "ACME Shop", a suitable namespace prefix would be `Acme\\Connector\\AcmeShop`.
+A possible approach is to combine your company's name with the system you want to connect with JTL-Wawi.
+So if your companies name is "ACME Inc." and you wants to connect to your own hypothetical eCommerce platform called "ACME Shop", a suitable namespace prefix would be ``Acme\\Connector\\AcmeShop``.
 
 .. note::
-    Consider the `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard document if you have any questions regarding to the naming of PHP namespaces.
+    Consult the `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard document if you have any questions regarding to the naming of PHP namespaces.
 
 
 Entry point
@@ -35,7 +35,7 @@ The entry point for the connector in this tutorial is a file called ``public/ind
 It is up to you to make sure that this call succeeds in your environment before you may continue.
 
 .. note::
-    `www.shopdomain.tld` is a placeholder for a valid shop domain.
+    ``www.shopdomain.tld`` is a placeholder for a valid domain.
 
 .. code-block:: php
 
@@ -71,8 +71,11 @@ It is up to you to make sure that this call succeeds in your environment before 
     $application = new Application($connector, $connectorDir, $config, $configSchema);
     $application->run();
 
-After the index code initializes the autoloader, you may want to instantiate a custom Config or ConfigSchema object.
-At the end of the index.php we then create a Connector object and use it to instantiate the application which then gets started.
+After the the autoloader is initialized, a custom Config and/or a ConfigSchema object may want to instantiated. Both is optional.
+
+At the end of the script we then create a Connector object and use it to instantiate the application which then gets started.
+
+
 If a custom Config or ConfigSchema was created, they should be passed to the application as well. Otherwise the application will create those objects itself.
 
 The application class manages communication between the two system, handles the protocol layer and forwards all valid requests to the :code:`Connector` class.
