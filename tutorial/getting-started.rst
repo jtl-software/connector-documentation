@@ -18,7 +18,7 @@ Preliminary note
 All code specific for this tutorial, i.e. code that is specific for the targeted software system that should be connected to JTL-Wawi, resides in the ``Jtl\\Connector\\Example`` namespace.
 You have to use a different namespace prefix for your implementation.
 A possible approach is to combine your company's name with the system you want to connect with JTL-Wawi.
-So if your company name is "ACME Inc." and you wants to connect to your own hypothetical eCommerce platform called "ACME Shop", a suitable namespace prefix would be ``Acme\\Connector\\AcmeShop``.
+So if your company's name is "ACME Inc." and you want to connect to your own hypothetical eCommerce platform called "ACME Shop", a suitable namespace prefix would be ``Acme\\Connector\\AcmeShop``.
 
 .. note::
     Consult the `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard document if you have any questions regarding to the naming of PHP namespaces.
@@ -41,7 +41,7 @@ It is up to you to make sure that this call succeeds in your environment before 
 
     <?php
 
-    $connectorDir = dirname(__DIR__);
+   $connectorDir = dirname(__DIR__);
 
     require_once $connectorDir . "/vendor/autoload.php";
 

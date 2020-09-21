@@ -1,10 +1,10 @@
 * :doc:`/book/introduction`
 * :doc:`/book/fundamentals`
-* :doc:`/book/rpc-protocol`
+* :doc:`/book/application`
+* :doc:`/book/checksum-loader`
+* :doc:`/book/configuration`
 * :doc:`/book/debugging`
 * :doc:`/book/features-matrix`
 * :doc:`/book/primary-key-mapper`
+* :doc:`/book/rpc-protocol`
 * :doc:`/book/token-validator`
-* :doc:`/book/configuration`
-* :doc:`/book/application`
-* :doc:`/book/checksum-loader`

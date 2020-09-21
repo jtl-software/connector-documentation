@@ -16,8 +16,8 @@ The file is also available on `GitHub <https://github.com/jtl-software/connector
     {
         "entities": {
             "Category": {
-                "pull": true,
-                "push": true,
+                "pull": false,
+                "push": false,
                 "delete": false
             },
             "CategoryAttr": {
@@ -468,15 +468,15 @@ The file is also available on `GitHub <https://github.com/jtl-software/connector
         },
         "flags": {
             "var_combination_child_first": false,
-            "product_images_supported": true,
-            "category_images_supported": true,
-            "manufacturer_images_supported": true,
+            "product_images_supported": false,
+            "category_images_supported": false,
+            "manufacturer_images_supported": false,
             "specific_images_supported": false,
             "specific_value_images_supported": false,
             "config_group_images_supported": false,
             "product_variation_value_images_supported": false,
             "variation_products_supported": false,
-            "variation_combinations_supported": true,
+            "variation_combinations_supported": false,
             "set_articles_supported": false,
             "free_field_supported": false,
             "needs_category_root": false,

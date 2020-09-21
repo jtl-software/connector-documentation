@@ -123,7 +123,7 @@ In order to handle other RPC actions, the controller must implement:
 There is one more interface which helps to handle requests inside a transaction, the ``Jtl\Connector\Core\Controller\TransactionalInterface`` interface.
 Methods from this interface will be called only on `push` and `delete` RPC calls.
 
-The second example shows the implementation of the TransactionalInterface in a controller which also implements a `delete` action.
+The second example shows the implementation of the ``TransactionalInterface`` in a controller which also implements a `delete` action.
 
 .. code-block:: php
 

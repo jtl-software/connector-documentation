@@ -31,6 +31,7 @@ The :ref:`primary key mapper <primary-key-mapper>` links objects between JTL-Waw
         }
 
         /**
+         * Returns the corresponding hostId to a endpointId and type
          * @inheritDoc
          */
         public function getHostId(int $type, string $endpointId): ?int
@@ -42,6 +43,7 @@ The :ref:`primary key mapper <primary-key-mapper>` links objects between JTL-Waw
         }
 
         /**
+         * Returns the corresponding endpointId to a hostId and type
          * @inheritDoc
          */
         public function getEndpointId(int $type, int $hostId): ?string
@@ -53,6 +55,7 @@ The :ref:`primary key mapper <primary-key-mapper>` links objects between JTL-Waw
         }
 
         /**
+         * Saves one specific linking
          * @inheritDoc
          */
         public function save(int $type, string $endpointId, int $hostId): bool
@@ -62,34 +65,42 @@ The :ref:`primary key mapper <primary-key-mapper>` links objects between JTL-Waw
         }
 
         /**
+         * Deletes a specific linking identified by the type and al least one part the the id
          * @inheritDoc
          */
         public function delete(int $type, string $endpointId = null, int $hostId = null): bool
         {
-            $where = '';
-            $params = [];
+            $where = [
+                'type = ?',
+            ];
+            $params = [
+                $type
+            ];
 
-            if ($endpointId !== null && $hostId !== null) {
-                $where = 'WHERE endpoint = ? AND host = ? AND type = ?';
-                $params = [$endpointId, $hostId, $type];
-            } elseif ($endpointId !== null) {
-                $where = 'WHERE endpoint = ? AND type = ?';
-                $params = [$endpointId, $type];
-            } elseif ($hostId !== null) {
-                $where = 'WHERE host = ? AND type = ?';
-                $params = [$hostId, $type];
+            if ($endpointId !== null) {
+                $where[] = 'endpoint = ?';
+                $params[] = $endpointId;
+            }
+            if ($hostId !== null) {
+                $where[] = 'host = ?';
+                $params[] = $hostId;
             }
 
-            $statement = $this->pdo->prepare(sprintf('DELETE IGNORE FROM mapping %s', $where));
+            $statement = $this->pdo->prepare(sprintf('DELETE IGNORE FROM mapping WHERE %s', join(' AND ', $where)));
 
             return $statement->execute($params);
         }
 
         /**
+         * Clears either the whole mapping table or all entries of a certain type
          * @inheritDoc
          */
         public function clear(int $type = null): bool
         {
+            if(!is_null($type)) {
+                return $this->delete($type);
+            }
+
             $statement = $this->pdo->prepare('DELETE FROM mapping');
             $statement->execute();
 
