@@ -3,7 +3,7 @@
 Features matrix
 ===============
 
-It is very likely that your endpoint implementation does not support the full feature set JTL-Wawi offers.
+It is very likely that your endpoint implementation does not support the full feature set that JTL-Wawi offers.
 This might be due to limitations of the underlying target system or because of functionality that cannot be made compatible with JTL-Wawi because their respective concepts differ too much.
 To tell JTL-Wawi which features of JTL-Connector are supported by your endpoint implementation, you are required to build a **features matrix** and ship it with your endpoint code.
 

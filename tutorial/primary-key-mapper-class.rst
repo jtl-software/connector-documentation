@@ -31,7 +31,7 @@ The :ref:`primary key mapper <primary-key-mapper>` links objects between JTL-Waw
         }
 
         /**
-         * Returns the corresponding hostId to a endpointId and type
+         * Returns the corresponding hostId to an endpointId and type
          * @inheritDoc
          */
         public function getHostId(int $type, string $endpointId): ?int
@@ -65,7 +65,7 @@ The :ref:`primary key mapper <primary-key-mapper>` links objects between JTL-Waw
         }
 
         /**
-         * Deletes a specific linking identified by the type and al least one part the the id
+         * Deletes a specific linking identified by the type and at least one part the the id
          * @inheritDoc
          */
         public function delete(int $type, string $endpointId = null, int $hostId = null): bool

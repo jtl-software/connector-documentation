@@ -16,5 +16,5 @@ Please see :ref:`plugins <plugins-introduction>` guide to see how to extend func
 
 **What should be done if an error occurs?**
 
-All Exception that occur within the :doc:`Endpoint </glossary/endpoint>` are being caught by the core and then be passed to the :doc:`JTL-Wawi </glossary/jtl-wawi>`
+All Exceptions that occur within the :doc:`endpoint </glossary/endpoint>` are being caught by the :doc:`Core</glossary/core>` and returned in the response to :doc:`JTL-Wawi </glossary/jtl-wawi>`.
 If you think this is a bug in software you can let us know by posting new thread in `our forum  <https://forum.jtl-software.de/#jtl-connector.6>`_.

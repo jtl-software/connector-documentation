@@ -3,16 +3,16 @@
 Events
 ======
 
-Events are dispatched in :doc:`Application </book/application>` class in specific moments and can be classified as 4 main types by event name creation.
-You can easily build event name using static helper methods from ``Jtl\Connector\Core\Definition\Event`` class.
-By using events you can add functionality to the main entities which themselves cannot be added. The technology behind the
-event system is explained in the next chapter, see :ref:`plugin-architecture`.
+Events are dispatched in an instance of the :doc:`Application </book/application>` class in specific moments.
+They can be classified as 4 main types by event name creation.
+The technology behind the event system is explained in the next chapter, see :ref:`plugin-architecture`.
+You can easily build an event name by using static helper methods from the ``Jtl\Connector\Core\Definition\Event`` class.
 
 1. Endpoint controller related
 ------------------------------
 
-This is most common event type. Can be used for model properties manipulations. Events listed below are related to
-main model entities. If event class is missing then ``Jtl\Connector\Core\Event\ModelEvent`` will be used.
+This is the most common event type. It can be used for the manipulation of models. The classes listed below are used as event arguments related to a specific
+Core model. If an event class for a specific model is missing then an instance of ``Jtl\Connector\Core\Event\ModelEvent`` will be used as argument.
 
 Example events ( see full list in `/src/Event` folder ):
 
@@ -34,8 +34,8 @@ How to create name for this event?
 2. Core controller events
 -------------------------
 
-This event type is connector core events related. Can be used if you want to override data
-that is send by connector core to client or in opposite direction.
+This event type is connector core events related. It can be used if you want to override data
+which is sent by connector core to a client or in opposite direction.
 
 Event examples:
 
@@ -56,7 +56,7 @@ How to create name for this event?
 3. Handle events
 ----------------
 
-Handle events are fired before and after specific request in 'handled' by Application or by Connector (depends on implementation).
+Handle events are fired before and after a specific request is 'handled' by the :doc:`Core</glossary/core>` or by the :doc:`endpoint </glossary/endpoint>` (depends on implementation).
 
 Events:
 
@@ -76,7 +76,7 @@ How to create name for this event?
 4. RPC event
 ------------
 
-There are two RPC events in Application that you can subscribe. They are called before serialization and before
+There are two RPC events in the :doc:`Core</glossary/core>` that you can subscribe. They are called before serialization and before
 response is sent.
 
 Event: ``Jtl\Connector\Core\Event\RpcEvent``

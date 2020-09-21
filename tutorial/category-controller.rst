@@ -1,11 +1,12 @@
 Category controller
 ===================
 
-Category controller is one of main controllers (objects). Others are for example: Product, Manufacturer, Customer, CustomerOrder etc. you can find them in :ref:`data models <data-models>`.
-Category controller implementation in example connector contain of all basic methods that can be called:
+The Category controller is one of the main controllers. Others for example are Product, Manufacturer, Customer, CustomerOrder etc. You can find them in :ref:`data models <data-models>`.
 
 .. note::
-    You can read more about request flow here: :ref:`fundamentals`
+    You can read more about the request flow here: :ref:`fundamentals`
+
+The implementation of the Category controller in the example contains all basic methods that can be called:
 
 - statistic
 - pull
@@ -13,10 +14,10 @@ Category controller implementation in example connector contain of all basic met
 - delete
 
 .. note::
-    In example connector we decided to use `UUID's <https://de.wikipedia.org/wiki/Globally_Unique_Identifier>`_ to create
-    ids. However if you creating your own connector it's up to you what to use. Please also see how :ref:`primary-key-mapper` works.
+    We decided to use `UUID's <https://de.wikipedia.org/wiki/Globally_Unique_Identifier>`_ for creating
+    ids in the (example) shop inside the example connector. However, it depends on the platform you want to connect with JTL-Wawi what type of ids are present. Please also see how the :ref:`primary-key-mapper` works.
 
-Here is example json payload that you can send into connector (for example by :ref:`connector tester <debugging-client-side>`) to create new category with two translations:
+Here is a json payload example, that you can send to the endpoint (e.g. by using the :ref:`connector tester <debugging-client-side>`) for creating a new category with two translations:
 
 .. code-block:: json
 

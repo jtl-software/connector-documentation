@@ -26,9 +26,8 @@ Example plugin in connector directory structure
 Bootstrap.php
 -------------
 
-The following :code:`Bootstrap` class is placed in the folder plugins/DemoPlugin and therefore has the namespace :code:`DemoPlugin`.
-Regarding to the `PSR-4 <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md>`_ standard the entry point of the plugin has to be called Bootstrap.
-In addition to the name the :code:`PluginInterface` interface has to be implemented in order to be detected by the :doc:`Core</glossary/core>` autoloader.
+The following class is placed in ``{connector_dir}/plugins/DemoPlugin/Bootstrap.php``. It stays inside the namespace :code:`DemoPlugin`.
+In addition to the class name ``DemoPlugin\Bootstrap`` the ``Jtl\Connector\Core\Plugin\PluginInterface`` interface has to be implemented by the class, in order to be detected by the :doc:`Core</glossary/core>`.
 There is no other action needed to register the plugin.
 
 .. code-block:: php
@@ -71,13 +70,10 @@ There is no other action needed to register the plugin.
     }
 
 In the body of the :code:`registerListener()` method you have to subscribe the events you want to listen to.
-The code snipped above shows the adding of a category before push event. This is the first parameter of the :code:`addListener()` method.
-The second method is an array consisting of an instance of the class which should be notified and the name of the method which will be called.
+The code snipped above shows adding of a category before push event. The first parameter of the :code:`addListener()` method is the name of the event you want to listen to.
+The second parameter is a callable function with an event object as argument (event arg).
 
-Besides the coding style it will get very important if you don't have just one event you want to listen but eight up to ten on several main objects.
-As defined in our :code:`Bootstrap.php` the :code:`handle` method will be called by the dispatcher before the category push.
+The event argument contains a main models object, which can be accessed by a getter.
+In this case :code:`$event->getCategory()` returns the object. It can be modified in a before event or used like in this example in an after event.
 
-The passed parameter contains an event. Via a getter method you have access to the main entity of the event.
-In this case :code:`$event->getProduct()` returns the object. It can be modified in a before event or used like in this example in an after event.
-
-That is basically all you need to know if you want to extend the :doc:`endpoint </glossary/endpoint>` with a plugin.
+That is basically all you need to know if you want to write a plugin for an :doc:`endpoint </glossary/endpoint>`.

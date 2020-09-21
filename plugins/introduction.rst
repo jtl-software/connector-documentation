@@ -7,8 +7,5 @@ Plugins get invoked by an event driven system.
 These events are fired by the :doc:`Core</glossary/core>`.
 More detailed information about the event system can be found in chapter :ref:`events <plugin-events>`.
 
-Another programming paradigm which is used is Dependency Injection.
-It allows the automatically loading of all plugins by the :doc:`Core</glossary/core>`.
-
-By using the above mentioned principles the plugin is decoupled from the actual :doc:`endpoint </glossary/endpoint>` implementation.
-Nevertheless you have access to all by the :doc:`JTL-Wawi </glossary/jtl-wawi>` transferred information.
+By using the above mentioned principle, the plugin is decoupled from the actual :doc:`endpoint </glossary/endpoint>` implementation.
+Nevertheless you have access to all information transferred by :doc:`JTL-Wawi </glossary/jtl-wawi>` and the :doc:`endpoint </glossary/endpoint>`.

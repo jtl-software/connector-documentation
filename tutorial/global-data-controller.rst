@@ -1,12 +1,12 @@
-GlobalData controller
-=====================
+Global Data controller
+======================
 
-GlobalData controller is responsible for returning 'global' information about endpoint configuration like available
-languages, currencies, customer groups etc. You can find full list of possible info that can be set inside ``Jtl\Connector\Core\Model\GlobalData``
+The Global Data controller is responsible for returning 'global' information about endpoint configuration, like available
+languages, currencies, customer groups etc. You can find a full list of possible data that can be set inside ``Jtl\Connector\Core\Model\GlobalData``
 model class.
 
-In example connector we will use hardcoded values only for presentation. Real implementation should fetch actual values
-and return them to client.
+In the example hardcoded values will be used for presentation. A real implementation should collect actual values from the shop
+and return them to the client.
 
 .. code-block:: php
 
