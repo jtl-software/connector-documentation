@@ -1,14 +1,9 @@
-JTL-Connector
-=============
+JTL-Connector Documentation
+===========================
 
-JTl-Connector a modern interface between a platform and our JTL-Wawi.
+JTl-Connector a modern interface between JTL-Wawi and a various platform.
 
-**This is official documentation repository**, available on [**docs.jtl-connector.de**](http://docs.jtl-connector.de).
-
-JTL-Software on Twitter
------------------------
-
-If you want to keep up with updates, [follow the official JTL-Software account on twitter](https://twitter.com/jtlsoftware).
+**This is the official repository for the documentation of JTL-Connector Core**, available on [**docs.jtl-connector.de**](http://docs.jtl-connector.de).
 
 Build
 -----
@@ -28,7 +23,10 @@ $ sphinx-build -b html . build
 
 Documentation index is `build/index.html`.
 
-Authors
--------
 
-JTL-Software GmbH (Daniel Böhmer, Christian Spoo, Daniel Hoffmann, Sven Mäurer)
+Links
+-----
+* Check our repositories on [GitHub](https://github.com/jtl-software)
+* Like us on [facebook](https://www.facebook.com/JTLSoftware)
+* Follow us on [twitter](https://twitter.com/jtlsoftware)
+* Become a member of our beloved [forum](https://forum.jtl-software.de)
