@@ -35,8 +35,8 @@ The application provides some methods to replace the default used instances:
 .. danger::
     Please keep in mind that changing the default behaviour of the core requires some advanced knowledge about how the core works.
 
-The application class is using a `DI container <https://php-di.org/>`_ for handling objects and dependencies internally. Because of that it is possible to overwrite
-most of code functionalities by your own objects.
+The application class is using a `DI container <https://php-di.org/>`_ for handling objects and dependencies internally.
+Because of this, it is possible to overwrite most of code functionalities by your own objects.
 
 .. _request_handling:
 

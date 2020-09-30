@@ -25,7 +25,7 @@ Request flow
 ------------
 
 Incoming JSON requests are decoded and validated inside the :doc:`Core</glossary/core>`.
-It decodes the RPC requests and identifies the RPC parameters as well as the RPC method which has to be called.
+It identifies the RPC parameters as well as the RPC method which has to be called.
 
 Each RPC method will be mapped to a controller method which will be then invoked.
 
@@ -39,7 +39,7 @@ In the last step the result will be converted into a RPC response and sent back 
 
 To review:
 
-- Each call - executed by JTL-Wawi - arrives the endpoint as RPC request.
+- Each call - executed by JTL-Wawi - raches the endpoint as RPC request.
 - The :doc:`Core</glossary/core>` decodes this request and determines the RPC parameters and RPC method.
 - The :doc:`Core</glossary/core>` or the endpoint maps the RPC method to its appropriate controller method and invokes it.
 - The controller method performs the request and returns a result which in turn will be passed to the :doc:`Core</glossary/core>`.
@@ -64,35 +64,35 @@ Core definitions
 The Core contains special classes in the ``Jtl\Connector\Core\Definition`` namespace. Definitions are describing the connector environment in different parts.
 Here is a short description about them:
 
-+-------------+---------------------------------------------------------------------------------------------------------+
-|Name         |Description                                                                                              |
-+=============+=========================================================================================================+
-|Action       |Contains all action names that can be called. Can be used to check if action belongs to core or endpoint.|
-+-------------+---------------------------------------------------------------------------------------------------------+
-|Controller   |Contains controller names. Can be used to check if given name is real controller name.                   |
-+-------------+---------------------------------------------------------------------------------------------------------+
-|ErrorCode    |Application error codes.                                                                                 |
-+-------------+---------------------------------------------------------------------------------------------------------+
-|Event        |Can be used to generate event names (see :doc:`events  </plugins/events>`).                              |
-+-------------+---------------------------------------------------------------------------------------------------------+
-|IdentityType |Contains identity types used by connector.                                                               |
-+-------------+---------------------------------------------------------------------------------------------------------+
-|Model        |Contains model names and their mapping to identities.                                                    |
-+-------------+---------------------------------------------------------------------------------------------------------+
-|PaymentType  |Contains payment types that are known by JTL-Wawi.                                                       |
-+-------------+---------------------------------------------------------------------------------------------------------+
-|RelationType |Is responsible for defining relations between main identities and image identities.                      |
-+-------------+---------------------------------------------------------------------------------------------------------+
-|RpcMethod    |Helper class for defining RPC methods. Contains also method mappings (redirection) to other methods.     |
-|             |The method ``connector.identify`` method will be mapped to ``core.connector.identify`` for example.      |
-+-------------+---------------------------------------------------------------------------------------------------------+
++-------------+----------------------------------------------------------------------------------------------------+
+|Name         |Description                                                                                         |
++=============+====================================================================================================+
+|Action       |Contains all available action names. Can be used to check if an action belongs to core or endpoint. |
++-------------+----------------------------------------------------------------------------------------------------+
+|Controller   |Contains all available controller names. Can be used to check if given name is real controller name.|
++-------------+----------------------------------------------------------------------------------------------------+
+|ErrorCode    |Application error codes.                                                                            |
++-------------+----------------------------------------------------------------------------------------------------+
+|Event        |Can be used to generate event names (see :doc:`events  </plugins/events>`).                         |
++-------------+----------------------------------------------------------------------------------------------------+
+|IdentityType |Contains identity types used by connector.                                                          |
++-------------+----------------------------------------------------------------------------------------------------+
+|Model        |Contains model names and their mapping to identities.                                               |
++-------------+----------------------------------------------------------------------------------------------------+
+|PaymentType  |Contains payment types that are known by JTL-Wawi.                                                  |
++-------------+----------------------------------------------------------------------------------------------------+
+|RelationType |Is responsible for defining relations between main identities and image identities.                 |
++-------------+----------------------------------------------------------------------------------------------------+
+|RpcMethod    |Helper class for defining RPC methods. Contains also method mappings (redirection) to other methods.|
+|             |E.g. the method ``connector.identify`` will be mapped to ``core.connector.identify``.        |
++-------------+----------------------------------------------------------------------------------------------------+
 
 
 Request in action
 -----------------
 
 Suppose you want to handle the RPC method `product.push`.
-This method is responsible for insert or update new product data into the online shop system.
+This method is responsible for inserting or updating product data into the online shop system.
 
 We start with creating a `Product` controller class in the endpoint implementation.
 
