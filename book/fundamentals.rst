@@ -84,7 +84,7 @@ Here is a short description about them:
 |RelationType |Is responsible for defining relations between main identities and image identities.                 |
 +-------------+----------------------------------------------------------------------------------------------------+
 |RpcMethod    |Helper class for defining RPC methods. Contains also method mappings (redirection) to other methods.|
-|             |E.g. the method ``connector.identify`` will be mapped to ``core.connector.identify``.        |
+|             |E.g. the method ``connector.identify`` will be mapped to ``core.connector.identify``.               |
 +-------------+----------------------------------------------------------------------------------------------------+
 
 
