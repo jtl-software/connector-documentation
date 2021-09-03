@@ -10,10 +10,14 @@ It is responsibility of an endpoint to validate the token.
 
     <?php
 
-    namespace Jtl\Connector\Example\Authentication;
+    namespace Jtl\Connector\Core\Authentication;
 
-    use Jtl\Connector\Core\Authentication\TokenValidatorInterface;
+    use Jtl\Connector\Core\Exception\TokenValidatorException;
 
+    /**
+     * Class TokenValidator
+     * @package Jtl\Connector\Core\Authentication
+     */
     class TokenValidator implements TokenValidatorInterface
     {
         /**
@@ -24,22 +28,22 @@ It is responsibility of an endpoint to validate the token.
         /**
          * TokenValidator constructor.
          * @param string $token
-         * @throws \Exception
+         * @throws TokenValidatorException
          */
         public function __construct(string $token)
         {
-            if ($token === '') {
-                throw new \Exception("Token can not be an empty string");
+            if ($token == '') {
+                throw TokenValidatorException::emptyToken();
             }
-
             $this->token = $token;
         }
 
         /**
-         * @inheritDoc
+         * @param string $token
+         * @return bool
          */
-        public function validate(string $token) : bool
+        public function validate(string $token): bool
         {
-            return $token === $this->token;
+            return $this->token === $token;
         }
     }

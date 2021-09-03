@@ -26,11 +26,11 @@ The implementation of the connector class from our example connector looks like 
     namespace Jtl\Connector\Example;
 
     use DI\Container;
+    use Jtl\Connector\Core\Authentication\TokenValidator;
     use Jtl\Connector\Core\Authentication\TokenValidatorInterface;
     use Jtl\Connector\Core\Config\ConfigSchema;
     use Jtl\Connector\Core\Connector\ConnectorInterface;
     use Jtl\Connector\Core\Mapper\PrimaryKeyMapperInterface;
-    use Jtl\Connector\Example\Authentication\TokenValidator;
     use Jtl\Connector\Example\Installer\Installer;
     use Jtl\Connector\Example\Mapper\PrimaryKeyMapper;
     use Noodlehaus\ConfigInterface;

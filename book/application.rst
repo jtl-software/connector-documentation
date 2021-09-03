@@ -3,16 +3,26 @@
 Application
 ===========
 
-Entry point for each request is the ``Jtl\Connector\Core\Application\Application`` class. To properly serve the request, you should
-create an instance of a connector application with desired parameters and options and call the ``run`` method.
+Starting point of each endpoint is the application, which is an instance of the class ``Jtl\Connector\Core\Application\Application``. The application has three constructor arguments:
 
-- ``Jtl\Connector\Core\Connector\ConnectorInterface $connector`` - instance of endpoint
-- ``string $connectorDir`` - root path to endpoint
-- ``Noodlehaus\ConfigInterface $config`` - (optional) config object for use in core and endpoint
-- ``Jtl\Connector\Core\Config\ConfigSchema $configSchema`` - (optional) definition of what config object should have to be valid.
-  If you want to know more about the config schema please check the :ref:`configuration <configuration>` chapter
+    - ``string $connectorDir`` - root path to endpoint
+    - ``Noodlehaus\ConfigInterface $config`` - (optional) config object for use in core and endpoint
+    - ``Jtl\Connector\Core\Config\ConfigSchema $configSchema`` - (optional) definition of what config object should have to be valid.
 
-Overwriting defaults
+      .. note::
+
+        More details about the config schema can be found in the :ref:`configuration <configuration>` chapter.
+
+
+A connector related request can be properly served by calling the ``run`` method from the application. Required argument is an instance of a class which implements the ``Jtl\Connector\Core\Connector\ConnectorInterface`` interface. The connector implementation provides required data about the endpoint.
+
+.. code-block:: php
+
+    $application->run($connector);
+
+
+
+Overriding defaults
 --------------------
 
 The application provides some methods to replace the default used instances:
@@ -27,16 +37,16 @@ The application provides some methods to replace the default used instances:
 
          $application->setSessionHandler(new class($pdoOrDsn) implements SessionHandlerInterface extends PdoSessionHandler);
 
-- ``setErrorHandler`` - by default ``Jtl\Connector\Core\Error\ErrorHandler`` can be changed to another handler which extends
-  ``Jtl\Connector\Core\Error\AbstractErrorHandler`` class.
+- ``setErrorHandler`` - by default an instance of ``Jtl\Connector\Core\Error\ErrorHandler`` is set. It can be replaced by another handler which extends
+  ``Jtl\Connector\Core\Error\AbstractErrorHandler``.
 
 - ``registerController`` - if you want to register a controller which does not match the default controller name pattern (or any other reason). You can check the constants defined in the class ``Jtl\Connector\Core\Definition\Controller`` for all valid controller names in the :doc:`Core</glossary/core>`.
 
 .. danger::
     Please keep in mind that changing the default behaviour of the core requires some advanced knowledge about how the core works.
 
-The application class is using a `DI container <https://php-di.org/>`_ for handling objects and dependencies internally.
-Because of this, it is possible to overwrite most of code functionalities by your own objects.
+The application is using a `DI container <https://php-di.org/>`_ for handling objects and dependencies internally.
+Because of this, it is possible to override most of code functionalities by your own objects.
 
 .. _request_handling:
 
