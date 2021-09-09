@@ -47,6 +47,16 @@ Plugins offer developers an easy way of adapting and extending an endpoint.
 
 .. include:: /plugins/map.rst.inc
 
+Upgrading
+---------
+
+.. toctree::
+   :hidden:
+
+   upgrading/index
+
+.. include:: /upgrading/map.rst.inc
+
 FAQ (Frequently Asked Questions)
 --------------------------------
 
