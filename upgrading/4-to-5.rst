@@ -8,4 +8,5 @@ A few public things changed. That's why the creation of another major version wa
 * The method ``addIdentificationString()`` was replaced by ``setIdentificationString()`` and ``setIdentificationStringBySubject()`` and the ``$mainLanguageIso`` argument on the ``getIdentificationStrings()`` method was removed in ``Jtl\Connector\Core\Model\AbstractModel``.
 * The optional argument ``$mainLanguageIso`` in the ``getIdentificationStrings()`` method was removed in ``Jtl\Connector\Core\Model\AbstractModel``. First available translation will be taken instead.
 * All classes from the ``Jtl\Connector\Core\Type`` namespace were removed and replaced by reflection.
+* The class ``Jtl\Connector\Core\Model\AbstractDataModel`` was completely replaced by ``Jtl\Connector\Core\Model\AbstractModel``.
 * Use of the class ``Jtl\Connector\Core\Model\TranslatableAttribute`` was simplified. A new property `type` was added, for being able to cast attribute values. Available types are `bool`, `float`, `int`, `json` and `string` (default). Actually the `type` property can be set only in the code. Idea is that `type` property can be set by JTL-Wawi in future.
