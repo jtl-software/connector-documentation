@@ -3,10 +3,10 @@ Version 4 to 5
 
 A few public things changed. That's why the creation of another major version was required.
 
-* The ``$connector`` dependency in ``Jtl\Connector\Core\Application\Application`` class moved from constructor to ``run()`` method. In this way an application can get instantiated without any knowledge about a specific connector.
-* The properties ``$request`` and ``$response`` in ``Jtl\Connector\Core\Application\Application`` class were renamed to ``$httpRequest`` and ``$httpResponse``, due to better understanding. So the method ``setRequest()`` was changed to ``setHttpRequest()`` as well.
-* The method ``addIdentificationString()`` was replaced by ``setIdentificationString()`` and ``setIdentificationStringBySubject()`` and the ``$mainLanguageIso`` argument on the ``getIdentificationStrings()`` method was removed in ``Jtl\Connector\Core\Model\AbstractModel``.
-* The optional argument ``$mainLanguageIso`` in the ``getIdentificationStrings()`` method was removed in ``Jtl\Connector\Core\Model\AbstractModel``. First available translation will be taken instead.
-* All classes from the ``Jtl\Connector\Core\Type`` namespace were removed and replaced by reflection.
+* The ``$connector`` dependency in ``Jtl\Connector\Core\Application\Application::__construct()`` class was moved to ``Jtl\Connector\Core\Application\Application::run()`` method. In this way an application can get instantiated without any knowledge about a specific connector.
 * The class ``Jtl\Connector\Core\Model\AbstractDataModel`` was completely replaced by ``Jtl\Connector\Core\Model\AbstractModel``.
-* Use of the class ``Jtl\Connector\Core\Model\TranslatableAttribute`` was simplified. A new property `type` was added, for being able to cast attribute values. Available types are `bool`, `float`, `int`, `json` and `string` (default). Actually the `type` property can be set only in the code. Idea is that `type` property can be set by JTL-Wawi in future.
+* The method ``Jtl\Connector\Core\Model\AbstractModel::addIdentificationString()`` was replaced by ``Jtl\Connector\Core\Model\AbstractModel::setIdentificationString()`` and ``Jtl\Connector\Core\Model\AbstractModel::setIdentificationStringBySubject()`` as well as the ``$mainLanguageIso`` argument on the ``Jtl\Connector\Core\Model\AbstractModel::getIdentificationStrings()`` method was removed.
+* The properties ``$request`` and ``$response`` in ``Jtl\Connector\Core\Application\Application`` class were renamed to ``$httpRequest`` and ``$httpResponse``, due to better understanding. So the method ``setRequest()`` was changed to ``setHttpRequest()`` as well.
+* The optional argument ``$mainLanguageIso`` in the method ``Jtl\Connector\Core\Model\AbstractModel::getIdentificationStrings()`` was removed. First available translation will be taken instead.
+* All classes from the ``Jtl\Connector\Core\Type`` namespace were removed and replaced by reflection.
+* Use of class ``Jtl\Connector\Core\Model\TranslatableAttribute`` was simplified. A new property ``type`` was added, for being able to cast attribute values. Available types are ``bool``, ``float``, ``int``, ``json`` and ``string`` (default). Actually the ``type`` property can be set only in the code. Idea is that ``type`` property can be set by JTL-Wawi in future.
